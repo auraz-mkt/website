@@ -22,6 +22,7 @@ body {
   align-items: center;
 
   background-color: var(--light-background);
+  font-family: 'Quicksand', sans-serif;
 }
 
 .header {
@@ -52,6 +53,7 @@ body {
 
   font-size: 4em;
   text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
 }
 
 .callout__name::selection {
