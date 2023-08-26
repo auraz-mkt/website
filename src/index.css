@@ -1,0 +1,28 @@
+.callout {
+  width: 100%;
+}
+
+.callout__name {
+  color: var(--primary-font);
+
+  font-size: 4em;
+  text-align: center;
+  font-family: var(--serif-family);
+}
+
+.callout__name::selection {
+  color: var(--light-font);
+  background-color: var(--primary-background);
+}
+
+.callout__motto {
+  margin-top: 1em;
+
+  font-size: 2em;
+  text-align: center;
+}
+
+.callout__motto::selection {
+  color: var(--light-font);
+  background-color: var(--light-background);
+}

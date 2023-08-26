@@ -1,0 +1,48 @@
+.about {
+  width: 100%;
+
+  display: flex;
+  justify-content: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about__profile {
+  text-align: center;
+
+  padding: 2em;
+  background-color: var(--medium-background);
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--dark-gray);
+}
+
+.about__profile__picture {
+  border-radius: 50%;
+
+  width: 8em;
+  height: 8em;
+}
+
+.about__profile__name {
+  margin-top: 1em;
+
+  font-family: var(--serif-family);
+  font-size: var(--font-large);
+}
+
+.about__profile__experience {
+  margin-top: 0.5em;
+}
+
+.about__profile__education {
+}
+
+.about__profile__linkedin {
+  display: block;
+  margin-top: 0.5em;
+
+  color: var(--dark-font);
+  text-decoration: none;
+}

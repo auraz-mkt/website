@@ -1,14 +1,22 @@
 :root {
-  --primary: #010101;
+  --font-medium: 16px;
+  --font-large: 24px;
+
+  --serif-family: 'Cinzel Decorative', cursive;
+  --sans-serif-family: 'Quicksand', sans-serif;
+
   --black: #010101;
   --white: #EEEEEE;
+  --gray: #DDDDDD;
+  --dark-gray: #CCCCCC;
 
-  --primary-font: var(--primary);
+  --primary-font: var(--black);
   --light-font: var(--white);
   --dark-font: var(--black);
 
-  --primary-background: var(--primary);
+  --primary-background: var(--black);
   --light-background: var(--white);
+  --medium-background: var(--gray);
   --dark-background: var(--black);
 }
 
@@ -22,7 +30,7 @@ body {
   align-items: center;
 
   background-color: var(--light-background);
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--sans-serif-family);
 }
 
 .header {
@@ -34,43 +42,20 @@ body {
 
 .header__links {
   font-size: 1.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.header__item:not(:first-child) {
+  margin-left: 1em;
 }
 
 .header__link {
   color: var(--light-font);
   text-decoration: none;
-}
-
-.callout {
-  width: 100%;
-  margin: 0em 10em;
-
-  color: var(--dark-font);
-}
-
-.callout__name {
-  color: var(--primary-font);
-
-  font-size: 4em;
-  text-align: center;
-  font-family: 'Cinzel Decorative', cursive;
-}
-
-.callout__name::selection {
-  color: var(--light-font);
-  background-color: var(--primary-background);
-}
-
-.callout__motto {
-  margin-top: 1em;
-
-  font-size: 2em;
-  text-align: center;
-}
-
-.callout__motto::selection {
-  color: var(--light-font);
-  background-color: var(--light-background);
 }
 
 .footer {
