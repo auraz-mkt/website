@@ -18,6 +18,7 @@ export default {
     return {
       links: [
         { path: "/", description: "Auraz" },
+        { path: "/about/", description: "Sobre" },
       ],
     };
   },
@@ -40,7 +41,12 @@ export default {
 }
 
 .header__item {
+  @apply ml-8;
   @apply no-underline;
+}
+
+.header__item:first-child {
+  @apply ml-0;
   @apply font-serif;
 }
 
