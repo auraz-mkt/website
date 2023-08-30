@@ -4,6 +4,9 @@
     <div class="callout__motto">
       Trazendo Marketing de volta para as Pessoas
     </div>
+    <a id="cta" href="https://rebrand.ly/auraz-waitlist">
+      Entre na lista de espera!
+    </a>
   </main>
 </template>
 
@@ -15,6 +18,15 @@ useSeoMeta({
 </script>
 
 <style lang="css">
+#cta {
+  @apply mt-12;
+  @apply rounded-full;
+  @apply px-8 py-4;
+
+  @apply bg-dark text-light;
+  @apply font-extrabold;
+}
+
 .callout {
   @apply w-full;
   @apply text-center;
