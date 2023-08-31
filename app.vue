@@ -6,6 +6,20 @@
   </div>
 </template>
 
+<script setup>
+const { locale, t: $t } = useI18n();
+const lang = locale.value;
+
+const pageDescription = `${$t("companyName")} - ${$t("motto")}`;
+
+useSeoMeta({
+  lang: lang,
+  description: pageDescription,
+  ogDescription: pageDescription,
+  twitterDescription: pageDescription,
+});
+</script>
+
 <style>
 .layout {
   @apply w-screen h-screen;

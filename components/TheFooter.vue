@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="footer__copyright">© 2023 Auraz Marketing</div>
+    <div class="footer__copyright">{{ $t('copyrightNotice') }}</div>
   </footer>
 </template>
 

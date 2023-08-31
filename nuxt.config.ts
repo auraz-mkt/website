@@ -6,8 +6,8 @@ export default defineNuxtConfig({
     families: { "Cinzel+Decorative": true, Quicksand: true },
   },
   i18n: {
-    locales: ["pt_BR", "en_US"],
-    defaultLocale: "pt_BR",
+    locales: ["pt-BR", "en-US"],
+    defaultLocale: "pt-BR",
     strategy: "prefix",
     vueI18n: "./i18n.config.ts",
   },

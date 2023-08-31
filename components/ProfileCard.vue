@@ -17,21 +17,35 @@
 <script>
 export default {
   props: {
-    name: String,
-    experience: String,
-    education: String,
-    gravatarId: String,
-    linkedinId: String,
+    profileId: String,
   },
   computed: {
+    name() {
+      return this.$t(`founders.${this.profileId}.name`);
+    },
+    experience() {
+      return this.$t(`founders.${this.profileId}.experience`);
+    },
+    education() {
+      return this.$t(`founders.${this.profileId}.education`);
+    },
+    gravatarId() {
+      return this.$t(`founders.${this.profileId}.gravatarId`);
+    },
+    linkedinId() {
+      return this.$t(`founders.${this.profileId}.linkedinId`);
+    },
     gravatarUrl() {
       return `https://gravatar.com/avatar/${this.gravatarId}?s=128&d=mp`;
     },
+    linkedinLocale() {
+      return this.$i18n.locale.replace("-", "_");
+    },
     linkedinUrl() {
-      return `https://linkedin.com/in/${this.linkedinId}`;
+      return `https://linkedin.com/in/${this.linkedinId}?locale=${this.linkedinLocale}`;
     },
     altText() {
-      return `Imagem Perfil ${this.name}`;
+      return `${this.$t('profileImageAlt')} ${this.name}`;
     },
   },
 };

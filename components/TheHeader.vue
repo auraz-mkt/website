@@ -6,19 +6,34 @@
         :key="path"
         class="header__item"
       >
-        <NuxtLink class="header__link" :to="path">{{ description }}</NuxtLink>
+        <NuxtLink :to="localePath(path, locale)">{{ $t(description) }}</NuxtLink>
+      </li>
+    </ul>
+    <ul class="header__locales">
+      <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
+        <NuxtLink :to="switchLocalePath(code)">{{ flag }}</NuxtLink>
       </li>
     </ul>
   </header>
 </template>
+
+<script setup>
+const { locale } = useI18n();
+const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
+</script>
 
 <script>
 export default {
   data() {
     return {
       links: [
-        { path: "/", description: "Auraz" },
-        { path: "/about/", description: "Sobre" },
+        { path: "/", description: "companyName" },
+        { path: "/about/", description: "pages.about" },
+      ],
+      locales: [
+        { code: "pt-BR", flag: "🇧🇷" },
+        { code: "en-US", flag: "🇺🇸" },
       ],
     };
   },
@@ -29,6 +44,7 @@ export default {
 .header {
   @apply w-full;
   @apply px-8 py-8;
+  @apply flex flex-row justify-between;
 
   @apply bg-dark selection:bg-light;
   @apply text-light selection:text-dark;
@@ -50,7 +66,16 @@ export default {
   @apply font-serif;
 }
 
-.header__link {
-  @apply align-baseline;
+.header__locales {
+  @apply text-2xl;
+  @apply flex flex-row justify-start items-center;
+}
+
+.header__locale {
+  @apply ml-2;
+}
+
+.header__locale:first-child {
+  @apply ml-0;
 }
 </style>

@@ -1,19 +1,23 @@
 <template>
   <main class="callout">
-    <h1 class="callout__name">Auraz</h1>
+    <h1 class="callout__name">{{ $t("companyName") }}</h1>
     <div class="callout__motto">
-      Trazendo Marketing de volta para as Pessoas
+      {{ $t("motto") }}
     </div>
     <a id="cta" href="https://rebrand.ly/auraz-waitlist">
-      Entre na lista de espera!
+      {{ $t("waitList") }}
     </a>
   </main>
 </template>
 
 <script setup>
+const { t: $t } = useI18n();
+const pageTitle = `${$t("companyName")}`;
+
 useSeoMeta({
-  title: "Auraz",
-  description: "Auraz - Trazendo Marketing de volta para as Pessoas",
+  title: pageTitle,
+  ogTitle: pageTitle,
+  twitterTitle: pageTitle,
 });
 </script>
 
