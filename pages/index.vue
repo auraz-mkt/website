@@ -4,7 +4,7 @@
     <div class="callout__motto">
       {{ $t("motto") }}
     </div>
-    <a id="cta" href="https://rebrand.ly/auraz-waitlist">
+    <a id="cta" href="https://auraz.social/waitlist">
       {{ $t("waitList") }}
     </a>
   </main>
