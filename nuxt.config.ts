@@ -11,4 +11,11 @@ export default defineNuxtConfig({
     strategy: "prefix",
     vueI18n: "./i18n.config.ts",
   },
+  runtimeConfig: {
+    contentful: {
+      spaceId: process.env.CTF_SPACE_ID,
+      accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+      blogPostTypeId: process.env.CTF_BLOG_POST_TYPE_ID,
+    },
+  },
 });
