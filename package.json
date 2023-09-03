@@ -14,5 +14,10 @@
     "@nuxtjs/i18n": "^8.0.0-rc.3",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "nuxt": "^3.7.0"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.1.1",
+    "@contentful/rich-text-types": "^16.2.1",
+    "contentful": "^10.5.1"
   }
 }
