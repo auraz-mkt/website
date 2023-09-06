@@ -39,6 +39,8 @@ useSeoMeta({
 
   @apply text-dark selection:text-light;
   @apply bg-light selection:bg-dark;
+
+  @apply bg-noisy;
 }
 
 .callout__name {
