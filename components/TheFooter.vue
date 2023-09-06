@@ -10,8 +10,8 @@
   @apply px-8 py-8;
 
   @apply text-lg;
-  @apply bg-dark selection:bg-light;
-  @apply text-light selection:text-dark;
+  @apply text-light bg-dark;
+  @apply selection:text-dark selection:bg-tertiary;
 }
 
 .footer__copyright {

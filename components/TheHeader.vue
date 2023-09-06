@@ -47,6 +47,7 @@ export default {
   @apply flex flex-row justify-between;
 
   @apply text-light bg-gradient-to-br from-primary from-30% to-secondary to-70%;
+  @apply selection:text-dark selection:bg-tertiary;
 }
 
 .header__items {

@@ -63,8 +63,8 @@ export default {
   @apply text-center;
   @apply flex items-center flex-col;
 
-  @apply bg-inherit selection:bg-dark;
-  @apply text-dark selection:text-light;
+  @apply text-dark bg-light;
+  @apply selection:text-dark selection:bg-tertiary;
 
   @apply shadow-2xl shadow-primary;
 }

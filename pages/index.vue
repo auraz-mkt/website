@@ -31,6 +31,8 @@ useSeoMeta({
 
   @apply text-light bg-gradient-to-br from-primary to-secondary;
   @apply hover:text-light hover:bg-gradient-to-br hover:from-secondary hover:to-primary;
+
+  @apply selection:text-dark selection:bg-tertiary;
 }
 
 .callout {
@@ -39,8 +41,8 @@ useSeoMeta({
 
   @apply flex flex-col justify-center items-center;
 
-  @apply text-dark selection:text-light;
-  @apply bg-light selection:bg-dark;
+  @apply text-dark bg-light;
+  @apply selection:text-dark selection:bg-tertiary;
 
   @apply bg-noisy;
 }
