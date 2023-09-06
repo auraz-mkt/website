@@ -46,9 +46,7 @@ export default {
   @apply px-8 py-8;
   @apply flex flex-row justify-between;
 
-  @apply bg-dark selection:bg-light;
-  @apply text-light selection:text-dark;
-  @apply outline-1 outline-offset-2 outline-current;
+  @apply text-light bg-gradient-to-br from-primary from-30% to-secondary to-70%;
 }
 
 .header__items {
