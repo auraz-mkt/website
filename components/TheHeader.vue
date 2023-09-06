@@ -72,7 +72,7 @@ export default {
 }
 
 .header__locale {
-  @apply ml-2;
+  @apply ml-3;
 }
 
 .header__locale:first-child {
