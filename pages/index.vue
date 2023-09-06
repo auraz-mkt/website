@@ -53,6 +53,8 @@ useSeoMeta({
 .callout__name {
   @apply font-serif;
   @apply text-8xl;
+
+  @apply hover:text-shadow-lg hover:shadow-tertiary;
 }
 
 .callout__motto {
