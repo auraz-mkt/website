@@ -103,7 +103,8 @@ export default {
   @apply text-lg;
 
   @apply no-underline;
-  @apply outline-1 outline-offset-2 outline-current;
   @apply text-primary font-bold;
+  @apply hover:text-shadow-lg hover:shadow-tertiary;
+  @apply focus:outline-none focus:text-shadow-lg focus:shadow-tertiary;
 }
 </style>

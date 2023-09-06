@@ -6,12 +6,16 @@
         :key="path"
         class="header__item"
       >
-        <NuxtLink :to="localePath(path, locale)">{{ $t(description) }}</NuxtLink>
+        <NuxtLink class="header__link" :to="localePath(path, locale)">{{
+          $t(description)
+        }}</NuxtLink>
       </li>
     </ul>
     <ul class="header__locales">
       <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
-        <NuxtLink :to="switchLocalePath(code)">{{ flag }}</NuxtLink>
+        <NuxtLink class="header__link" :to="switchLocalePath(code)">{{
+          flag
+        }}</NuxtLink>
       </li>
     </ul>
   </header>
@@ -76,5 +80,10 @@ export default {
 
 .header__locale:first-child {
   @apply ml-0;
+}
+
+.header__link {
+  @apply hover:text-shadow-xl hover:shadow-tertiary;
+  @apply focus:outline-none focus:text-shadow-xl focus:shadow-tertiary;
 }
 </style>

@@ -33,6 +33,9 @@ useSeoMeta({
   @apply hover:text-light hover:bg-gradient-to-br hover:from-secondary hover:to-primary;
 
   @apply selection:text-dark selection:bg-tertiary;
+
+  @apply hover:shadow-glow-xl hover:shadow-tertiary;
+  @apply focus:outline-none focus:shadow-glow-xl focus:shadow-tertiary;
 }
 
 .callout {
