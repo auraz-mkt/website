@@ -77,9 +77,8 @@ export default {
   @apply select-none;
 
   @apply bg-gradient-to-br;
-  @apply from-slate-300;
-  @apply via-slate-200;
-  @apply to-slate-400;
+  @apply from-primary;
+  @apply to-secondary;
 }
 
 .profile__name {
