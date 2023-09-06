@@ -23,8 +23,8 @@ useSeoMeta({
 
 <style lang="css">
 #cta {
-  @apply mt-12;
   @apply rounded-full;
+  @apply mt-12;
   @apply px-8 py-4;
 
   @apply bg-dark text-light;
