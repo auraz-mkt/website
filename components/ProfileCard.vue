@@ -66,7 +66,7 @@ export default {
   @apply bg-inherit selection:bg-dark;
   @apply text-dark selection:text-light;
 
-  @apply shadow-2xl;
+  @apply shadow-2xl shadow-primary;
 }
 
 .profile__picture {
