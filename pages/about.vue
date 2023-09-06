@@ -32,7 +32,8 @@ export default {
 <style>
 .about {
   @apply w-full;
-  @apply flex flex-col lg:flex-row justify-evenly items-center;
+  @apply py-4;
+  @apply flex flex-col lg:flex-row justify-start lg:justify-evenly items-center;
 
   @apply bg-light;
 }

@@ -56,8 +56,9 @@ export default {
   @apply w-96 lg:w-auto;
   @apply lg:basis-1/4;
 
-  @apply mx-8 my-16;
   @apply px-6 py-12;
+  @apply my-4;
+  @apply lg:mx-8 lg:my-16;
 
   @apply text-center;
   @apply flex items-center flex-col;
