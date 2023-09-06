@@ -27,8 +27,10 @@ useSeoMeta({
   @apply mt-12;
   @apply px-8 py-4;
 
-  @apply bg-dark text-light;
-  @apply font-extrabold;
+  @apply text-xl;
+
+  @apply text-light bg-gradient-to-br from-primary to-secondary;
+  @apply hover:text-light hover:bg-gradient-to-br hover:from-secondary hover:to-primary;
 }
 
 .callout {
