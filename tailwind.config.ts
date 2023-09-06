@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import colors from "tailwindcss/colors";
 
 export default <Partial<Config>>{
@@ -27,6 +28,27 @@ export default <Partial<Config>>{
         "glow-xl": "0 0 32px 0px rgb(0 0 0 / 0.1)",
         "glow-2xl": "0 0 64px 0px rgb(0, 0, 0, 0.25)",
       },
+      textShadow: {
+        xs: "0 0 1px var(--tw-shadow-color)",
+        sm: "0 0 2px var(--tw-shadow-color)",
+        DEFAULT: "0 0 4px var(--tw-shadow-color)",
+        lg: "0 0 16px var(--tw-shadow-color)",
+        xl: "0 0 32px var(--tw-shadow-color)",
+        "2xl": "0 0 48px var(--tw-shadow-color)",
+        "3xl": "0 0 64px var(--tw-shadow-color)",
+      },
     },
   },
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };
