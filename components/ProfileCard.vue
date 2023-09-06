@@ -100,11 +100,11 @@ export default {
 
 .profile__linkedin {
   @apply block;
-  @apply mt-2;
+  @apply mt-4;
   @apply text-lg;
 
-  @apply font-bold;
   @apply no-underline;
   @apply outline-1 outline-offset-2 outline-current;
+  @apply text-primary font-bold;
 }
 </style>
