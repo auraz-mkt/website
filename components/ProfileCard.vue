@@ -79,6 +79,8 @@ export default {
   @apply bg-gradient-to-br;
   @apply from-primary;
   @apply to-secondary;
+
+  @apply hover:shadow-glow-xl hover:shadow-tertiary;
 }
 
 .profile__name {
@@ -86,6 +88,8 @@ export default {
 
   @apply font-serif;
   @apply text-3xl;
+
+  @apply hover:text-shadow-lg hover:shadow-tertiary;
 }
 
 .profile__experience {
