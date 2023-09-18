@@ -29,6 +29,7 @@ export default defineI18nConfig(() => ({
       copyrightNotice: shared.copyrightNotice,
       pages: {
         about: "Sobre",
+        blog: "Blog",
       },
       profileImageAlt: "Imagem Perfil",
       founders: {
@@ -56,6 +57,7 @@ export default defineI18nConfig(() => ({
       copyrightNotice: shared.copyrightNotice,
       pages: {
         about: "About",
+        blog: "Blog",
       },
       profileImageAlt: "Profile Image",
       founders: {
