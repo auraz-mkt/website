@@ -1,6 +1,6 @@
 <template>
-    <main class="about">
-        <PostCard v-for="post in blogPosts" :key="post.id" :post-id="post.id" post="post" />
+    <main class="posts">
+        <PostCard v-for="post in blogPosts" :key="post.id" :post="post" />
     </main>
 </template>
 
@@ -20,15 +20,13 @@ useSeoMeta({
 export default {
     data() {
         return {
-            "blogPosts": posts
-        }
-    },
+        blogPosts: posts.posts,
+    }}
 };
-
 </script>
 
 <style>
-.about {
+.posts {
     @apply w-full;
     @apply py-4;
 
