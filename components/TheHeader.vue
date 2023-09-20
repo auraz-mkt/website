@@ -34,6 +34,7 @@ export default {
       links: [
         { path: "/", description: "companyName" },
         { path: "/about/", description: "pages.about" },
+        { path: "/blog/", description: "pages.blog" },
       ],
       locales: [
         { code: "pt-BR", flag: "🇧🇷" },

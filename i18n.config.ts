@@ -49,6 +49,10 @@ export default defineI18nConfig(() => ({
           education: "Doutorando Ciência da Computação",
         },
       },
+      paging: {
+        next: "Próximo",
+        previous: "Anterior",
+      },
     },
     "en-US": {
       companyName: "Auraz",
@@ -76,6 +80,10 @@ export default defineI18nConfig(() => ({
           experience: "Ex Elo7 (Principal ML Engineer)",
           education: "PhD candidate in Computer Science",
         },
+      },
+      paging: {
+        next: "Next",
+        previous: "Previous",
       },
     },
   },
