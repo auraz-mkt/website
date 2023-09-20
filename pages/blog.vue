@@ -1,6 +1,8 @@
 <template>
     <main class="posts">
+        <BlogHeroHeader />
         <PostList />
+        <NewsLetter />
     </main>
 </template>
 
