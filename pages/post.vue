@@ -1,6 +1,7 @@
 <template>
     <main class="posts">
         <PostText :post="blogPosts.at(0)"/>
+        <NewsLetter />
     </main>
 </template>
 
