@@ -9,10 +9,10 @@
 
             </div>
 
-            <h1 class="text-3xl text-center font-bold leading-normal text-slate-900 mt-0 mb-3">
+            <h1 class="text-4xl text-center font-bold leading-normal text-slate-900 mt-0 mb-3">
                 {{ post.title }}</h1>
 
-            <div class="relative mt-8 flex items-center gap-x-4 justify-center text-center">
+            <div class="relative mt-4 flex items-center gap-x-4 justify-center text-center">
                 <img :src="post.author.img" alt="" class="h-10 w-10 rounded-full bg-gray-50">
                 <div class="text-sm leading-6">
                     <p class="font-semibold text-gray-900">
