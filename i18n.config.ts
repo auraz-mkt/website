@@ -29,6 +29,7 @@ export default defineI18nConfig(() => ({
       copyrightNotice: shared.copyrightNotice,
       pages: {
         about: "Sobre",
+        blog: "Blog",
       },
       profileImageAlt: "Imagem Perfil",
       founders: {
@@ -48,6 +49,10 @@ export default defineI18nConfig(() => ({
           education: "Doutorando Ciência da Computação",
         },
       },
+      paging: {
+        next: "Próximo",
+        previous: "Anterior",
+      },
     },
     "en-US": {
       companyName: "Auraz",
@@ -56,6 +61,7 @@ export default defineI18nConfig(() => ({
       copyrightNotice: shared.copyrightNotice,
       pages: {
         about: "About",
+        blog: "Blog",
       },
       profileImageAlt: "Profile Image",
       founders: {
@@ -74,6 +80,10 @@ export default defineI18nConfig(() => ({
           experience: "Ex Elo7 (Principal ML Engineer)",
           education: "PhD candidate in Computer Science",
         },
+      },
+      paging: {
+        next: "Next",
+        previous: "Previous",
       },
     },
   },
