@@ -12,46 +12,35 @@
       </li>
     </ul>
     <ul class="header__locales">
-      <li
-        v-for="{ code, flag, path } in localesWithPath"
-        :key="path"
-        class="header__locale"
-      >
-        <a class="header__link" :href="path">{{ flag }}</a>
+      <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
+        <button class="header__link" @click.prevent.stop="setLocale(code)">
+          {{ flag }}
+        </button>
       </li>
     </ul>
   </header>
 </template>
 
 <script setup>
-import { useDynamicI18n } from "~/stores/dynamicI18n";
-
-const route = useRoute();
-const { locale } = useI18n();
+const { locale, setLocale } = useI18n();
 const localePath = useLocalePath();
-const switchLocalePath = useSwitchLocalePath();
+</script>
 
-// const dynamicI18n = useDynamicI18n();
-// console.log("=>", dynamicI18n.nuxtI18);
-
-// route.meta.nuxtI18n = {
-//   "pt-BR": { slug: "conheca-auraz" },
-//   "en-US": { slug: "meet-auraz" },
-// }
-// console.log("2: ", localePath(route, "en-US"));
-// console.log("3: ", switchLocalePath("en-US"));
-
-const links = useState("links", () => [
-  { path: "/", description: "companyName" },
-  { path: "/about/", description: "pages.about" },
-  { path: "/blog/", description: "pages.blog" },
-  { path: "/contact/", description: "pages.contact" },
-]);
-
-const localesWithPath = useState("localesWithPath", () => [
-  { code: "pt-BR", flag: "🇧🇷", path: switchLocalePath("pt-BR") },
-  { code: "en-US", flag: "🇺🇸", path: switchLocalePath("en-US") },
-]);
+<script>
+export default {
+  data() {
+    return {
+      links: [
+        { path: "/", description: "companyName" },
+        { path: "/about/", description: "pages.about" },
+      ],
+      locales: [
+        { code: "pt-BR", flag: "🇧🇷" },
+        { code: "en-US", flag: "🇺🇸" },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
