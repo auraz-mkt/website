@@ -13,18 +13,17 @@
     </ul>
     <ul class="header__locales">
       <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
-        <NuxtLink class="header__link" :to="switchLocalePath(code)">{{
-          flag
-        }}</NuxtLink>
+        <button class="header__link" @click.prevent.stop="setLocale(code)">
+          {{ flag }}
+        </button>
       </li>
     </ul>
   </header>
 </template>
 
 <script setup>
-const { locale } = useI18n();
+const { locale, setLocale } = useI18n();
 const localePath = useLocalePath();
-const switchLocalePath = useSwitchLocalePath();
 </script>
 
 <script>
