@@ -20,13 +20,13 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      { code: "pt-BR", iso: "pt-BR" },
-      // { code: "en-US", iso: "en-US" },
+      { code: "pt-BR", files: ["pt-BR.json", "_default.json"] },
+      { code: "en-US", files: ["en-US.json", "_default.json"] },
     ],
-    dynamicRouteParams: true,
     defaultLocale: "pt-BR",
     strategy: "prefix",
-    vueI18n: "./i18n.config.ts",
+    langDir: "lang",
+    lazy: true,
   },
   runtimeConfig: {
     contentful: {
