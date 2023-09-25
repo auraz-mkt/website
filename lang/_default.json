@@ -1,0 +1,21 @@
+{
+  "companyName": "Auraz",
+  "copyrightNotice": "© 2023 Auraz Marketing",
+  "founders": {
+    "gabi": {
+      "name": "Gabriela André",
+      "gravatarId": "99f9e9b11a8be74bbb04994a24ed17f2",
+      "linkedinId": "gabriela-andr%C3%A9"
+    },
+    "julia": {
+      "name": "Júlia Goldman",
+      "gravatarId": "78672fab5733bfcf13c4120888db29a8",
+      "linkedinId": "juliafelippegoldman"
+    },
+    "renato": {
+      "name": "Renato Cordeiro",
+      "gravatarId": "cdffc1df22bce6b6a4a1776e2450474c",
+      "linkedinId": "renatocf"
+    }
+  }
+}

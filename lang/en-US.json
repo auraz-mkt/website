@@ -1,0 +1,24 @@
+{
+  "motto": "Bringing Marketing back to People",
+  "waitList": "Join our waitlist!",
+  "pages": {
+    "about": "About",
+    "forBrands": "Brands",
+    "forCreators": "Creators"
+  },
+  "profileImageAlt": "Profile Image",
+  "founders": {
+    "gabi": {
+      "experience": "Ex Meta and Bytedance (Social Media)",
+      "education": "BSc International Relations"
+    },
+    "julia": {
+      "experience": "Ex ONU and Bytedance (Social Media)",
+      "education": "BSc International Relations and Marketing"
+    },
+    "renato": {
+      "experience": "Ex Elo7 (Principal ML Engineer)",
+      "education": "PhD candidate in Computer Science"
+    }
+  }
+}

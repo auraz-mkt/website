@@ -1,0 +1,24 @@
+{
+  "motto": "Trazendo Marketing de volta para as Pessoas",
+  "waitList": "Entre na nossa lista de espera!",
+  "pages": {
+    "about": "Sobre",
+    "forBrands": "Marcas",
+    "forCreators": "Criadores"
+  },
+  "profileImageAlt": "Imagem Perfil",
+  "founders": {
+    "gabi": {
+      "experience": "Ex Meta e Bytedance (Social Media)",
+      "education": "Bacharel Relações Internacionais"
+    },
+    "julia": {
+      "experience": "Ex ONU e Bytedance (Social Media)",
+      "education": "Bacharel Relações Internacionais e Marketing"
+    },
+    "renato": {
+      "experience": "Ex Elo7 (Principal ML Engineer)",
+      "education": "Doutorando Ciência da Computação"
+    }
+  }
+}
