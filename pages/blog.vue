@@ -1,9 +1,16 @@
 <template>
     <main class="posts">
+        <div>
+        <div>
+            <MenuBar />
+        </div>
+        <div class="blogcontent">
         <BlogHeader />
-        <BlogHeroHeader />
+        <BlogHeroHeader /> 
         <PostList />
         <NewsLetter />
+        </div>
+        </div>
     </main>
 </template>
 
@@ -27,5 +34,10 @@ export default {
 </script>
 
 <style>
+
+.blogcontent {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
 
 </style>
