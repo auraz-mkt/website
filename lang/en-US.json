@@ -20,5 +20,23 @@
       "experience": "Ex Elo7 (Principal ML Engineer)",
       "education": "PhD candidate in Computer Science"
     }
+  },
+  "brand": {
+    "profile": {
+      "title": "Brand",
+      "greeting": "Hi! We are"
+    }
+  },
+  "creator": {
+    "profile": {
+      "greeting": "Hi! I am",
+      "seeMore": "See more videos",
+      "stats": {
+        "followers": "Followers",
+        "engagement": "Engagement",
+        "likes": "Likes",
+        "publications": "Publications"
+      }
+    }
   }
 }

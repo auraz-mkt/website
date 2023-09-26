@@ -28,5 +28,10 @@ useSeoMeta({
 
 .content {
   @apply flex-grow;
+
+  @apply py-8;
+  @apply px-4 lg:px-32 xl:px-72;
+
+  @apply bg-light;
 }
 </style>
