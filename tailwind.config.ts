@@ -14,6 +14,7 @@ export default <Partial<Config>>{
         secondary: "#6284BD",
         tertiary: "#ECBF7E",
         dark: "#222323",
+        darkish: "#2F3030",
         light: colors.neutral[50],
       },
       backgroundImage: {
