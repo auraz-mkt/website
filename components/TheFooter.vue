@@ -10,7 +10,7 @@
   @apply px-8 py-8;
 
   @apply text-lg;
-  @apply text-light bg-dark;
+  @apply text-light bg-gradient-to-br from-dark from-30% to-darkish to-70%;
   @apply selection:text-dark selection:bg-tertiary;
 }
 
