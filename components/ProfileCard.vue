@@ -76,10 +76,7 @@ export default {
   @apply rounded-full;
   @apply select-none;
 
-  @apply bg-gradient-to-br;
-  @apply from-primary;
-  @apply to-secondary;
-
+  @apply bg-gradient-to-br from-primary to-secondary;
   @apply hover:shadow-glow-xl hover:shadow-tertiary;
 }
 
