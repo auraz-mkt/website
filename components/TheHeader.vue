@@ -13,8 +13,8 @@
     </ul>
     <ul class="header__locales">
       <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
-        <button class="header__link" @click.prevent.stop="setLocale(code)">
-          {{ flag }}
+        <button class="header__flag" @click.prevent.stop="setLocale(code)">
+          <Icon class="header__flag_icon" :name="flag" />
         </button>
       </li>
     </ul>
@@ -35,8 +35,8 @@ export default {
         { path: "/about/", description: "pages.about" },
       ],
       locales: [
-        { code: "pt-BR", flag: "🇧🇷" },
-        { code: "en-US", flag: "🇺🇸" },
+        { code: "pt-BR", flag: "emojione:flag-for-brazil" },
+        { code: "en-US", flag: "emojione:flag-for-united-states" },
       ],
     };
   },
@@ -58,33 +58,43 @@ export default {
 .header__items {
   @apply text-2xl;
   @apply flex flex-row justify-start items-center;
+  @apply gap-6;
 }
 
 .header__item {
-  @apply ml-8;
   @apply no-underline;
 }
 
 .header__item:first-child {
-  @apply ml-0;
   @apply font-serif;
 }
 
 .header__locales {
   @apply text-2xl;
+
   @apply flex flex-row justify-start items-center;
-}
-
-.header__locale {
-  @apply ml-3;
-}
-
-.header__locale:first-child {
-  @apply ml-0;
+  @apply gap-4;
 }
 
 .header__link {
   @apply hover:text-shadow-xl hover:shadow-tertiary;
   @apply focus:outline-none focus:text-shadow-xl focus:shadow-tertiary;
+}
+
+.header__flag {
+  @apply h-8 w-8;
+  @apply rounded-full;
+
+  @apply ring-1 ring-light ring-offset-2 ring-offset-secondary;
+
+  @apply hover:shadow-glow-xl hover:shadow-tertiary;
+  @apply focus:outline-none focus:shadow-glow-xl focus:shadow-tertiary;
+
+  @apply flex flex-col justify-center items-center;
+}
+
+.header__flag_icon {
+  @apply h-8 w-8;
+  @apply rounded-full;
 }
 </style>
