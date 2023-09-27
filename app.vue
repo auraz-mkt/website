@@ -31,7 +31,7 @@ useSeoMeta({
 
 <style>
 .layout {
-  @apply w-screen h-screen;
+  @apply w-full h-screen;
   @apply flex flex-col justify-between items-center;
 }
 
