@@ -38,5 +38,16 @@
         "publications": "Publicações"
       }
     }
+  },
+  "campaign": {
+    "create": {
+      "callout": "Encontre os criadores certos para divulgar sua marca!",
+      "searchResult": {
+        "noResultsFoundServerError": "Ah não!",
+        "failedSearch": "Conexão com servidor falhou... Por favor, tente de novo",
+        "noResultsFoundTooRestrict": "Nenhum criador encontrado!",
+        "relaxSearch": "Mude sua busca para encontrar mais criadores"
+      }
+    }
   }
 }

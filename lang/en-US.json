@@ -38,5 +38,16 @@
         "publications": "Publications"
       }
     }
+  },
+  "campaign": {
+    "create": {
+      "callout": "Find the right creators to promote your brand!",
+      "searchResult": {
+        "noResultsFoundServerError": "Oh no!",
+        "failedSearch": "Connection with server failed... Please try again",
+        "noResultsFoundTooRestrict": "No creators found!",
+        "relaxSearch": "Change your search to find more creators"
+      }
+    }
   }
 }
