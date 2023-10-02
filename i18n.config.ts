@@ -49,13 +49,16 @@ export default defineI18nConfig(() => ({
           education: "Doutorando Ciência da Computação",
         },
       },
-      paging: {
-        next: "Próximo",
-        previous: "Anterior",
+      blog: {
+        name: "Auraz Blog",
+        publication: "Publicação",
+        revision: "Revisão",
+        tags: "Tags",
       },
     },
     "en-US": {
       companyName: "Auraz",
+      blogName: "Auraz Blog",
       motto: "Bringing Marketing back to People",
       waitList: "Join our waitlist!",
       copyrightNotice: shared.copyrightNotice,
@@ -81,9 +84,11 @@ export default defineI18nConfig(() => ({
           education: "PhD candidate in Computer Science",
         },
       },
-      paging: {
-        next: "Next",
-        previous: "Previous",
+      blog: {
+        name: "Auraz Blog",
+        publication: "Publication",
+        revision: "Revision",
+        tags: "Tags",
       },
     },
   },
