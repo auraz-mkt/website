@@ -1,5 +1,12 @@
 <template>
-  <div v-html="post" />
+  <!-- <div v-html="post" /> -->
+  <main class="posts">
+    <div class="blogcontent">
+      <BlogHeroHeader />
+      <PostList />
+      <NewsLetter />
+    </div>
+  </main>
 </template>
 
 <script setup>
@@ -19,10 +26,13 @@ const {
 
   const { items } = await contentfulClient.getEntries({
     content_type: config.contentful.blogPostTypeId,
+    include: 2,
     order: "-sys.createdAt",
   });
 
-  return renderBlogText(items[0].fields.body);
+  console.log(items)
+
+  return JSON.stringify(items);
 });
 </script>
 
@@ -33,5 +43,10 @@ const {
 
 .blog__italic {
   @apply italic;
+}
+
+.blogcontent {
+  width: calc(100% - 300px);
+  margin-left: 300px;
 }
 </style>
