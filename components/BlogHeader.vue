@@ -1,7 +1,7 @@
 <template>
     <div class="text-gray-600">
-        <div class="header">
-            <h3 class="header__title">
+        <div class="blogheader">
+            <h3 class="blogheader__title">
                 nosso blog
             </h3>
             <input type="checkbox" class="peer hidden" id="navbar-open" />
