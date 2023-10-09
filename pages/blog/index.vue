@@ -1,9 +1,8 @@
 <template>
-  <!-- <div v-html="post" /> -->
   <main class="posts">
     <div class="blogcontent">
       <BlogHeroHeader />
-      <PostList />
+      <PostList :posts="post"/>
       <NewsLetter />
     </div>
   </main>
@@ -26,13 +25,12 @@ const {
 
   const { items } = await contentfulClient.getEntries({
     content_type: config.contentful.blogPostTypeId,
-    include: 2,
     order: "-sys.createdAt",
   });
 
   console.log(items)
 
-  return JSON.stringify(items);
+  return items;
 });
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="posts flex flex-wrap justify-center">
-        <PostCard v-for="post in blogPosts" :key="post.id" :post="post" />
+        <PostCard v-for="post in posts" :key="post.sys.id" :post="post" />
     </div>
     <div class="paging flex flex-wrap justify-center">
         <Paging />
@@ -8,17 +8,11 @@
 </template>
 
 <script>
-import posts from "../mocks/posts.json";
 
 export default {
     props: {
-        profileId: String,
+        posts: Array,
     },
-    data() {
-        return {
-            blogPosts: posts.posts,
-        }
-    }
 };
 
 </script>
