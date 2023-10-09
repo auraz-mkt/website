@@ -25,11 +25,11 @@
 </template>
 
 <style>
-    .header {
+    .blogheader {
         @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
     }
 
-    .header__title {
+    .blogheader__title {
         @apply flex cursor-pointer items-center whitespace-nowrap text-2xl font-black;
     }
 
