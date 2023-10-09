@@ -24,7 +24,7 @@
 
 <style>
     .blogheader {
-        @apply text-gray-600 font-serif;
+        @apply text-gray-600 text-2xl;
         @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
     }
 
