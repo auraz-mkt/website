@@ -6,9 +6,9 @@
         :key="path"
         class="header__item"
       >
-        <NuxtLink class="header__link" :to="localePath(path, locale)">{{
+        <a class="header__link" :href="localePath(path, locale)">{{
           $t(description)
-        }}</NuxtLink>
+        }}</a>
       </li>
     </ul>
     <ul class="header__locales">
