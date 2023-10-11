@@ -1,68 +1,38 @@
 <template>
-    <div class="text-gray-600 body-font">
-        <nav class="flex px-4 border-b md:shadow-lg items-center relative">
-            <div class="text-lg font-bold md:py-0 py-4">
-                Auraz Blog
-            </div>
-            <ul class="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0">
-                <li>
-                    <a href="#" class="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-                        <span>Products</span>
-                    </a>
-                </li>
-                <li class="relative parent">
-                    <a href="#" class="flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2">
-                        <span>Service</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
-                    </a>
-                    <ul class="child transition duration-300 md:absolute top-full right-0 md:w-48 bg-white md:rounded-b ">
-                        <li>
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                                Web development
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                                Web Design
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex px-4 py-3 hover:bg-gray-50">
-                                Machine Learning
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="flex md:inline-flex p-4 items-center hover:bg-gray-50">
-                        <span>About us</span>
-                    </a>
-                </li>
-            </ul>
-            
-        </nav>
+    <div class="blogheader">
+        <h3 class="blogheader__title">
+            nosso blog
+        </h3>
+        <input type="checkbox" class="peer hidden" id="navbar-open" />
+        <label class="custom-label" for="navbar-open">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        </label>
+        <div class="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start">
+        <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
+            <li class="font-bold md:mr-12"><a href="#">Lorem 1</a></li>
+            <li class="md:mr-12"><a href="#">Lorem 2</a></li>
+            <li class="md:mr-12"><a href="#">Lorem 3</a></li>
+            <li class="md:mr-12">
+            <button class="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">Login</button>
+            </li>
+        </ul>
+        </div>
     </div>
 </template>
 
 <style>
-    @media only screen and (min-width: 768px){
-        .parent:hover .child {
-            opacity:1;
-            height:auto;
-            overflow:none;
-            transform: translateY(0);
-        }
-        .child {
-            opacity:0;
-            height:0;
-            overflow:hidden;
-            transform: translateY(-10%);
-        }
+    .blogheader {
+        @apply text-gray-600 text-2xl;
+        @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
     }
-    
+
+    .blogheader__title {
+        @apply flex cursor-pointer items-center whitespace-nowrap text-2xl font-black;
+    }
+
+    .custom-label {
+        @apply absolute top-5 right-7 cursor-pointer md:hidden;
+    }
 </style>
