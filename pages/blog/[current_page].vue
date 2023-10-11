@@ -2,11 +2,15 @@
     <main class="posts">
         <div class="blogcontent">
             <BlogHeroHeader />
-            <PostList :current_page="1"/>
+            <PostList :current_page="route.params.current_page" />
             <NewsLetter />
         </div>
     </main>
 </template>
+
+<script setup>
+const route = useRoute();
+</script>
 
 <style>
 .blogcontent {
