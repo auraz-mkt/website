@@ -21,4 +21,12 @@ export default defineNuxtConfig({
     langDir: "lang",
     lazy: true,
   },
+  routeRules: {
+    "/*": { cors: true },
+  },
+  runtimeConfig: {
+    public: {
+      aurazApiUrl: process.env.AURAZ_API_URL || "http://localhost:8000",
+    },
+  },
 });
