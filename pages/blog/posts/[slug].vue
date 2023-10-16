@@ -9,8 +9,6 @@
 
 <script setup>
 import contentful from "contentful";
-import { useDynamicI18n } from "@/stores/dynamicI18n";
-
 const { locale, t: $t } = useI18n();
 const route = useRoute();
 const config = useRuntimeConfig();

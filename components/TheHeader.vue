@@ -45,7 +45,7 @@ console.log("route @ header.vue", route.meta);
 const links = useState("links", () => [
   { path: "/", description: "companyName" },
   { path: "/about/", description: "pages.about" },
-  { path: "/blog/", description: "pages.about" },
+  { path: "/blog/", description: "pages.blog" },
   { path: "/contact/", description: "pages.contact" },
 ]);
 

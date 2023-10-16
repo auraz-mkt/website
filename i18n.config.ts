@@ -31,6 +31,10 @@ export default defineI18nConfig(() => ({
         about: "Sobre",
         blog: "Blog",
       },
+      paging: {
+        previous: "Anterior",
+        next: "Próxima",
+      },
       profileImageAlt: "Imagem Perfil",
       founders: {
         gabi: {
@@ -49,9 +53,6 @@ export default defineI18nConfig(() => ({
           education: "Doutorando Ciência da Computação",
         },
       },
-      paging: {
-        next: "Próximo",
-        previous: "Anterior",
       blog: {
         name: "Auraz Blog",
         publication: "Publicação",
@@ -59,7 +60,6 @@ export default defineI18nConfig(() => ({
         tags: "Tags",
       },
     },
-  },
     "en-US": {
       companyName: "Auraz",
       blogName: "Auraz Blog",
@@ -69,6 +69,10 @@ export default defineI18nConfig(() => ({
       pages: {
         about: "About",
         blog: "Blog",
+      },
+      paging: {
+        previous: "Previous",
+        next: "Next",
       },
       profileImageAlt: "Profile Image",
       founders: {
@@ -88,9 +92,6 @@ export default defineI18nConfig(() => ({
           education: "PhD candidate in Computer Science",
         },
       },
-      paging: {
-        next: "Next",
-        previous: "Previous",
       blog: {
         name: "Auraz Blog",
         publication: "Publication",
@@ -99,4 +100,4 @@ export default defineI18nConfig(() => ({
       },
     },
   },
-}}));
+}));
