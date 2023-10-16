@@ -10,6 +10,15 @@
 const { locale, t: $t } = useI18n();
 const lang = locale.value;
 
+const localeHead = useLocaleHead({
+  identifierAttribute: "id",
+  addSeoAttributes: true,
+});
+useHead({
+  link: localeHead.value.link,
+  meta: localeHead.value.meta,
+});
+
 const pageDescription = `${$t("companyName")} - ${$t("motto")}`;
 
 useSeoMeta({

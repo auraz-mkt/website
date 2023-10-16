@@ -12,37 +12,48 @@
       </li>
     </ul>
     <ul class="header__locales">
-      <li v-for="{ code, flag } in locales" :key="path" class="header__locale">
-        <NuxtLink class="header__link" :to="switchLocalePath(code)">{{
-          flag
-        }}</NuxtLink>
+      <li
+        v-for="{ code, flag, path } in localesWithPath"
+        :key="path"
+        class="header__locale"
+      >
+        <NuxtLink class="header__link" :to="path">{{ flag }}</NuxtLink>
       </li>
     </ul>
   </header>
 </template>
 
 <script setup>
+import { useDynamicI18n } from "~/stores/dynamicI18n";
+
+const route = useRoute();
 const { locale } = useI18n();
 const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
-</script>
 
-<script>
-export default {
-  data() {
-    return {
-      links: [
-        { path: "/", description: "companyName" },
-        { path: "/about/", description: "pages.about" },
-        { path: "/blog/", description: "pages.blog" },
-      ],
-      locales: [
-        { code: "pt-BR", flag: "🇧🇷" },
-        { code: "en-US", flag: "🇺🇸" },
-      ],
-    };
-  },
-};
+// const dynamicI18n = useDynamicI18n();
+// console.log("=>", dynamicI18n.nuxtI18);
+
+// route.meta.nuxtI18n = {
+//   "pt-BR": { slug: "conheca-auraz" },
+//   "en-US": { slug: "meet-auraz" },
+// }
+// console.log("2: ", localePath(route, "en-US"));
+// console.log("3: ", switchLocalePath("en-US"));
+
+console.log("route @ header.vue", route.meta);
+const links = useState("links", () => [
+  { path: "/", description: "companyName" },
+  { path: "/about/", description: "pages.about" },
+  { path: "/blog/", description: "pages.about" },
+  { path: "/contact/", description: "pages.contact" },
+]);
+
+const localesWithPath = useState("localesWithPath", () => [
+  { code: "pt-BR", flag: "🇧🇷", path: switchLocalePath("pt-BR") },
+  { code: "en-US", flag: "🇺🇸", path: switchLocalePath("en-US") },
+]);
+console.log(localesWithPath.value);
 </script>
 
 <style>
