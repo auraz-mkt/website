@@ -4,7 +4,7 @@
     :id="post.id">
     <div class="p-2 group relative w-full">
       <div class="relative w-full h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
-                <img :src="post.fields.img" :alt="post.fields.altText" class="h-full w-full object-cover object-center">
+                <img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center">
             </div>
       <article class="flex max-w-xl flex-col items-start justify-between">
         <div class="pt-1 flex items-center gap-x-4 text-xs">
@@ -50,5 +50,16 @@ const navigatePostURL = computed(() => "/" + locale.value + "/blog/posts/" + pos
 <style>
 .post__card {
   @apply max-w-xl
+}
+@media (max-width: 767px) {
+  .post__card article {
+    min-width: 360px;
+  }
+}
+
+@media (min-width: 768px) {
+  .post__card article {
+    min-width: 540px;
+  }
 }
 </style>

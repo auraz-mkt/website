@@ -1,16 +1,9 @@
 <template>
-    <main class="posts">
-        <div class="blogcontent">
-            <BlogHeroHeader />
-            <PostList :current_page="1"/>
-            <NewsLetter />
-        </div>
-    </main>
+    <BlogIndex />
 </template>
 
 <style>
-.blogcontent {
-    width: calc(100% - 300px);
-    margin-left: 300px;
+.placeholder {
+    width: 0;
 }
 </style>
