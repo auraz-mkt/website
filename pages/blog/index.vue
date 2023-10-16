@@ -1,12 +1,9 @@
 <template>
-    <main class="posts">
-        <PostList :current_page="1"/>
-    </main>
+    <BlogIndex />
 </template>
 
 <style>
-.blogcontent {
-    width: calc(100% - 300px);
-    margin-left: 300px;
+.placeholder {
+    width: 0;
 }
 </style>
