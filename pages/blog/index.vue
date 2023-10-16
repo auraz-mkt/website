@@ -1,10 +1,6 @@
 <template>
     <main class="posts">
-        <div class="blogcontent">
-            <BlogHeroHeader />
-            <PostList :current_page="1"/>
-            <NewsLetter />
-        </div>
+        <PostList :current_page="1"/>
     </main>
 </template>
 

@@ -30,6 +30,7 @@ export default defineI18nConfig(() => ({
       pages: {
         about: "Sobre",
         blog: "Blog",
+        contact: "Contato",
       },
       paging: {
         previous: "Anterior",
@@ -69,6 +70,7 @@ export default defineI18nConfig(() => ({
       pages: {
         about: "About",
         blog: "Blog",
+        contact: "Contact",
       },
       paging: {
         previous: "Previous",
