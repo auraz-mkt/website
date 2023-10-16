@@ -13,7 +13,7 @@ import contentful from "contentful";
 const { locale, t: $t } = useI18n();
 const config = useRuntimeConfig();
 
-const limit = 3;
+const limit = 10;
 const { current_page } = defineProps(["current_page"]);
 const generatePageList = (current_page) => {
     const pages = []
