@@ -8,21 +8,20 @@
 </template>
 
 <script setup>
-console = console
 import contentful from "contentful";
 const { locale, t: $t } = useI18n();
 const config = useRuntimeConfig();
-
+const route = useRoute();
 const limit = 10;
 const { current_page } = defineProps(["current_page"]);
 const generatePageList = (current_page) => {
-    const pages = []
+    const pages = [];
     for (let i = 1; i <= current_page; i++) {
-        pages.push(i)
+        pages.push(i);
     }
-    return pages
+    return pages;
 }
-const pages = generatePageList(2)
+const pages = generatePageList(2);
 
 const {
     data: posts,
@@ -40,11 +39,11 @@ const {
         locale: locale.value,
         limit: limit,
         skip: (current_page - 1) * limit,
+        [`fields.tags`]: route.query.tags,
     });
 
     return items;
 });
-console.log(posts)
 </script>
 
 <style>

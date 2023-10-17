@@ -1,38 +1,69 @@
 <template>
     <div class="blogheader">
         <h3 class="blogheader__title">
-            nosso blog
+            Tags
         </h3>
-        <input type="checkbox" class="peer hidden" id="navbar-open" />
-        <label class="custom-label" for="navbar-open">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        </label>
         <div class="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start">
-        <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-            <li class="font-bold md:mr-12"><a href="#">Lorem 1</a></li>
-            <li class="md:mr-12"><a href="#">Lorem 2</a></li>
-            <li class="md:mr-12"><a href="#">Lorem 3</a></li>
-            <li class="md:mr-12">
-            <button class="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">Login</button>
-            </li>
-        </ul>
+            <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
+                <li v-for="tag in tags" :key="tag" class="font-bold md:mr-12"><NuxtLink :to="localePath('/blog?tags='+tag, locale)" :key="localePath('/blog?tags=' + tag, locale)" replace>{{ tag }}</NuxtLink></li>
+                <!-- <li class="md:mr-12"><a href="#">Lorem 3</a></li>
+                <li class="md:mr-12">
+                <button class="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">Login</button>
+                </li> -->
+            </ul>
         </div>
     </div>
 </template>
 
 <style>
-    .blogheader {
-        @apply text-gray-600 text-2xl;
-        @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
-    }
+.blogheader {
+    @apply text-gray-600 text-2xl;
+    @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
+}
 
-    .blogheader__title {
-        @apply flex cursor-pointer items-center whitespace-nowrap text-2xl font-black;
-    }
+.blogheader__title {
+    @apply flex cursor-pointer items-center whitespace-nowrap text-2xl font-black;
+}
 
-    .custom-label {
-        @apply absolute top-5 right-7 cursor-pointer md:hidden;
-    }
+.custom-label {
+    @apply absolute top-5 right-7 cursor-pointer md:hidden;
+}
 </style>
+
+<script setup>
+import contentful from "contentful";
+const { locale, t: $t } = useI18n();
+const localePath = useLocalePath();
+const config = useRuntimeConfig();
+const limit = 10;
+const { current_page } = defineProps(["current_page"]);
+const generatePageList = (current_page) => {
+    const pages = [];
+    for (let i = 1; i <= current_page; i++) {
+        pages.push(i);
+    }
+    return pages;
+}
+const pages = generatePageList(2);
+
+const {
+    data: tags,
+    error,
+    status,
+} = await useAsyncData("tags", async () => {
+    const contentfulClient = contentful.createClient({
+        space: config.contentful.spaceId,
+        accessToken: config.contentful.accessToken,
+    });
+
+    const { items } = await contentfulClient.getEntries({
+        content_type: config.contentful.blogPostTypeId,
+        order: "-sys.createdAt",
+        locale: locale.value,
+    });
+
+    const tags = items.map((post) => post.fields.tags.join(",")).join(",").split(",").filter((value, index, array) => array.indexOf(value) === index);
+
+    return ref(tags);
+});
+</script>

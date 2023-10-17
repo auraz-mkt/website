@@ -36,10 +36,6 @@ export default defineI18nConfig(() => ({
         previous: "Anterior",
         next: "Próxima",
       },
-      paging: {
-        previous: "Anterior",
-        next: "Próxima",
-      },
       profileImageAlt: "Imagem Perfil",
       founders: {
         gabi: {
@@ -75,10 +71,6 @@ export default defineI18nConfig(() => ({
         about: "About",
         blog: "Blog",
         contact: "Contact",
-      },
-      paging: {
-        previous: "Previous",
-        next: "Next",
       },
       paging: {
         previous: "Previous",

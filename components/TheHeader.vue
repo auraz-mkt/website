@@ -41,7 +41,6 @@ const switchLocalePath = useSwitchLocalePath();
 // console.log("2: ", localePath(route, "en-US"));
 // console.log("3: ", switchLocalePath("en-US"));
 
-console.log("route @ header.vue", route.meta);
 const links = useState("links", () => [
   { path: "/", description: "companyName" },
   { path: "/about/", description: "pages.about" },
@@ -53,7 +52,6 @@ const localesWithPath = useState("localesWithPath", () => [
   { code: "pt-BR", flag: "🇧🇷", path: switchLocalePath("pt-BR") },
   { code: "en-US", flag: "🇺🇸", path: switchLocalePath("en-US") },
 ]);
-console.log(localesWithPath.value);
 </script>
 
 <style>
