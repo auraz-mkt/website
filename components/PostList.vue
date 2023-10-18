@@ -21,6 +21,10 @@ const generatePageList = (current_page) => {
     }
     return pages;
 }
+
+const getTagFromUrl = (tag) => {
+    return atob(tag);
+}
 const {
     data: posts,
     error,
@@ -37,7 +41,7 @@ const {
         locale: locale.value,
         limit: limit,
         skip: (current_page - 1) * limit,
-        [`fields.tags`]: route.query.tags,
+        [`fields.tags`]: getTagFromUrl(route.query.tags),
     });
 
     return items;
@@ -55,7 +59,7 @@ const {
         content_type: config.contentful.blogPostTypeId,
         order: "-sys.createdAt",
         locale: locale.value,
-        [`fields.tags`]: route.query.tags,
+        [`fields.tags`]: getTagFromUrl(route.query.tags),
     });
 
     return items;
