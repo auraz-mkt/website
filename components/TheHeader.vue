@@ -17,7 +17,7 @@
         :key="path"
         class="header__locale"
       >
-        <NuxtLink class="header__link" :to="path">{{ flag }}</NuxtLink>
+        <a class="header__link" :href="path">{{ flag }}</a>
       </li>
     </ul>
   </header>
