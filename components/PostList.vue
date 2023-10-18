@@ -1,5 +1,4 @@
 <template>
-    <div>{{tag}}</div>
     <div class="posts flex flex-wrap justify-center">
         <PostCard v-for="post in posts" :key="post.sys.id" :post="post" />
     </div>
@@ -14,7 +13,7 @@ const { locale, t: $t } = useI18n();
 const config = useRuntimeConfig();
 const route = useRoute();
 const limit = 10;
-const { current_page } = defineProps(["current_page"]);
+const { current_page, tag } = defineProps(["current_page", "tag"]);
 const generatePageList = (current_page) => {
     const pages = [];
     for (let i = 1; i <= current_page; i++) {
@@ -22,8 +21,7 @@ const generatePageList = (current_page) => {
     }
     return pages;
 }
-
-const getTagFromUrl = (tag) => {
+const bootstrapTag = (tag) => {
     return tag ? atob(tag.replaceAll(' ', "+")) : '';
 }
 const {
@@ -42,7 +40,7 @@ const {
         locale: locale.value,
         limit: limit,
         skip: (current_page - 1) * limit,
-        [`fields.tags`]: getTagFromUrl(route.query.tags),
+        [`fields.tags`]: bootstrapTag(tag),
     });
 
     return items;
@@ -60,7 +58,7 @@ const {
         content_type: config.contentful.blogPostTypeId,
         order: "-sys.createdAt",
         locale: locale.value,
-        [`fields.tags`]: getTagFromUrl(route.query.tags),
+        [`fields.tags`]: bootstrapTag(tag),
     });
 
     return items;

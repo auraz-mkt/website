@@ -1,7 +1,7 @@
 <template>
     <main class="posts">
         <BlogHeader />
-        <PostList :current_page="current_page" />
+        <PostList :current_page="current_page" :tag="tag" />
     </main>
 </template>
 
@@ -11,6 +11,10 @@ export default {
         current_page: {
             default: 1,
             type: Number
+        },
+        tag: {
+            default: '',
+            type: String
         }
     }
 }

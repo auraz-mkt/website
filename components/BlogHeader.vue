@@ -5,7 +5,7 @@
         </h3>
         <div class="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start">
             <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-                <li v-for="tag in tags" :key="tag" class="font-bold md:mr-12"><a :href="localePath(getTagUrl(tag), locale)">{{ tag }}</a></li>
+                <li v-for="tag in tags" :key="tag" class="font-bold md:mr-12"><a :href="localePath(generateTagURL(tag), locale)">{{ tag }}</a></li>
                 <!-- <li class="md:mr-12"><a href="#">Lorem 3</a></li>
                 <li class="md:mr-12">
                 <button class="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">Login</button>
@@ -36,10 +36,7 @@ const { locale, t: $t } = useI18n();
 const localePath = useLocalePath();
 const config = useRuntimeConfig();
 
-const getTagUrl = (tag) => {
-    return '/blog?tags='+btoa(tag)
-}
-
+const generateTagURL = (tag) => '/blog/tags/' + btoa(tag);
 
 const {
     data: tags,

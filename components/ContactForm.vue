@@ -1,6 +1,6 @@
 <template>
-  <div class="grid grid-cols-2 gap-4">
-    <div class="contact-form flex items-center justify-center p-12">
+  <div class="grid grid-cols-2 gap-4 mt-20 p-6">
+    <div class="contact-form flex items-center justify-center">
       <div class="mx-auto w-full">
         <form action="https://formbold.com/s/FORM_ID" method="POST">
           <div class="mb-5">
@@ -144,8 +144,35 @@
         </form>
       </div>
     </div>
+    <div class="contact-form-description">
+      <div v-html="renderBlogText(contactForms.fields.description)"></div>
+    </div>
   </div>
+  
 </template>
+
+<script setup>
+import contentful from "contentful";
+const { locale, t: $t } = useI18n();
+const config = useRuntimeConfig();
+const {
+    data: contactForms,
+    error,
+    status,
+} = await useAsyncData("contactForms", async () => {
+    const contentfulClient = contentful.createClient({
+        space: config.contentful.spaceId,
+        accessToken: config.contentful.accessToken,
+    });
+
+    const { items } = await contentfulClient.getEntries({
+        content_type: config.contentful.contactFormTypeId,
+        locale: locale.value,
+    });
+
+    return items[0];
+});
+</script>
 
 <script>
 export default {
@@ -194,5 +221,9 @@ export default {
   .contact-form {
     min-width: 700px;
   }
+}
+
+p {
+  margin: 1em;
 }
 </style>
