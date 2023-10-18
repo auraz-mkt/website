@@ -19,13 +19,14 @@
 
 <script setup>
 const { locale, t: $t } = useI18n();
+const localePath = useLocalePath();
 const { pages, current_page } = defineProps([
   "pages",
   "current_page",
 ]);
 const previous = computed(() => $t(`paging.previous`));
 const next = computed(() => $t(`paging.next`));
-const navigateURL = (page) => "/" + locale.value + "/blog/" + page;
+const navigateURL = (page) => localePath('/blog/' + page, locale);
 </script>
 
 <style>
