@@ -41,7 +41,7 @@ export default defineI18nConfig(() => ({
         type_brand: "Marca",
         submit_button: "Enviar",
         place_holder_name: "Nome completo",
-        place_holder_email: "{exemplo}{'@'}{dominio}{'.'}{com}",
+        place_holder_email: "exemplo{'@'}dominio{'.'}com",
         place_holder_message: "Escreva sua mensagem",
       },
       paging: {
@@ -93,7 +93,7 @@ export default defineI18nConfig(() => ({
         type_brand: "Brand",
         submit_button: "Send",
         place_holder_name: "Full Name",
-        place_holder_email: "{example}{'@'}{domain}{'.'}{com}",
+        place_holder_email: "example{'@'}domain{'.'}com",
         place_holder_message: "Type your message",
       },
       paging: {
@@ -126,6 +126,4 @@ export default defineI18nConfig(() => ({
       },
     },
   },
-  lazy: true,
-  defaultLocale: "br",
 }));

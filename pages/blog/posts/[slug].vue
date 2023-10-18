@@ -3,7 +3,6 @@
     <BlogPost :publication="sys.createdAt" :revision="sys.updatedAt" :title="fields.title[locale]"
       :body="fields.body[locale]" :tags="fields.tags[locale]" :author="fields.author['pt-BR']" />
     <ShareButton />
-    <NewsLetter />
   </main>
 </template>
 
