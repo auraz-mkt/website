@@ -2,7 +2,7 @@
   <div class="grid grid-cols-2 gap-4 mt-20 p-6">
     <div class="contact-form flex items-center justify-center">
       <div class="mx-auto w-full">
-        <form action="https://formbold.com/s/FORM_ID" method="POST">
+        <form action="https://formbold.com/s/9EPBp" method="POST">
           <div class="mb-5">
             <label
               for="name"
