@@ -1,4 +1,5 @@
 <template>
+    <div>{{tag}}</div>
     <div class="posts flex flex-wrap justify-center">
         <PostCard v-for="post in posts" :key="post.sys.id" :post="post" />
     </div>
@@ -23,7 +24,7 @@ const generatePageList = (current_page) => {
 }
 
 const getTagFromUrl = (tag) => {
-    return atob(tag);
+    return tag ? atob(tag.replaceAll(' ', "+")) : '';
 }
 const {
     data: posts,
