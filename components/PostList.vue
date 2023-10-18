@@ -2,7 +2,7 @@
     <div class="posts flex flex-wrap justify-center">
         <PostCard v-for="post in posts" :key="post.sys.id" :post="post" />
     </div>
-    <div class="mt-20 paging flex flex-wrap justify-center">
+    <div class="mt-20 mb-20 paging flex flex-wrap justify-center">
         <Paging :pages="pages" :current_page="current_page" />
     </div>
 </template>
@@ -21,8 +21,6 @@ const generatePageList = (current_page) => {
     }
     return pages;
 }
-const pages = generatePageList(2);
-
 const {
     data: posts,
     error,
@@ -44,6 +42,27 @@ const {
 
     return items;
 });
+
+const {
+    data: postsFull,
+} = await useAsyncData("postsFull", async () => {
+    const contentfulClient = contentful.createClient({
+        space: config.contentful.spaceId,
+        accessToken: config.contentful.accessToken,
+    });
+
+    const { items } = await contentfulClient.getEntries({
+        content_type: config.contentful.blogPostTypeId,
+        order: "-sys.createdAt",
+        locale: locale.value,
+        [`fields.tags`]: route.query.tags,
+    });
+
+    return items;
+});
+
+const pages_num = parseInt(Math.ceil((postsFull?._rawValue?.length || 0) / limit));
+const pages = generatePageList(pages_num);
 </script>
 
 <style>

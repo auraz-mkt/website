@@ -1,6 +1,6 @@
 <template>
     <main class="contact-form">
-        <NewsLetter />
+        <ContactForm />
     </main>
 </template>
 
