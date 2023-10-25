@@ -3,15 +3,13 @@
     class="post__card shadow-md bg-gray-50 border-solid border-2 border-gray-300 rounded-lg m-4 p-2  mt-6 space-y-12 lg:gap-x-6 lg:space-y-0"
     :id="post.id">
     <div class="p-2 group relative w-full">
-      <div class="relative w-full h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
+      <div class="relative w-full h-80 overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
                 <img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center">
             </div>
       <article class="flex max-w-xl flex-col items-start justify-between">
         <div class="pt-1 flex items-center gap-x-4 text-xs">
           <time :datetime="post.sys.createdAt" class="text-gray-500">{{ publicationDate }}</time>
-          <a href="#"
-            class="inline-block bg-slate-200 rounded-full px-3 py-1 text-sm font-medium text-slate-700 m-0.5">{{
-              tagsList }}</a>
+          <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
         </div>
         <div class="group relative">
           <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -42,7 +40,7 @@
 const { locale, t: $t } = useI18n();
 const { post } = defineProps(["post"]);
 const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
-const tagsList = computed(() => post.fields.tags.join(", "));
+const tagsList = computed(() => post.fields.tags);
 const blogText = computed(() => renderBlogText(post.fields.body));
 const navigatePostURL = computed(() => "/" + locale.value + "/blog/posts/" + post.fields.slug);
 </script>
