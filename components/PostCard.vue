@@ -9,7 +9,9 @@
       <article class="flex max-w-xl flex-col items-start justify-between">
         <div class="pt-1 flex items-center gap-x-4 text-xs">
           <time :datetime="post.sys.createdAt" class="text-gray-500">{{ publicationDate }}</time>
-          <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
+          <div>
+            <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
+          </div>
         </div>
         <div class="group relative">
           <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
