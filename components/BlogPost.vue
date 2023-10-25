@@ -2,11 +2,7 @@
   <article class="max-w-5xl mx-auto">
     <header class="mb-14">
       <div class="mt-3 text-center">
-
-        <a href="#" class="inline-block bg-slate-200 rounded-full px-3 py-1 text-sm font-medium text-slate-700 m-0.5">
-          {{ $t("blog.tags") }}:
-          {{ tagsList }}</a>
-
+        <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
       </div>
 
       <h1 class="text-4xl text-center font-bold leading-normal text-slate-900 mt-0 mb-3">
@@ -30,9 +26,9 @@
         </div>
       </div>
 
-      <!-- <div class="mt-10 -mx-7 md:mx-0">
-        <img class="w-full max-w-2xl mx-auto" :src="post.img" :width="960" :height="500" :alt="post.altText">
-      </div> -->
+      <div class="mt-10 -mx-7 md:mx-0">
+        <img class="w-full max-w-2xl mx-auto" :src="imgUrl" :width="960" :height="500" :alt="imgAlt">
+      </div>
     </header>
 
     <div class="blog_post__body" v-html="blogText" />
@@ -43,19 +39,21 @@
 <script setup>
 const { t: $t } = useI18n();
 
-const { publication, revision, title, body, tags, author } = defineProps([
+const { publication, revision, title, body, tags, author, imgUrl, imgAlt } = defineProps([
   "publication",
   "revision",
   "title",
   "body",
   "tags",
   "author",
+  "imgUrl",
+  "imgAlt",
 ]);
 
 const publicationDate = computed(() => new Date(publication).toLocaleDateString());
 const revisionDate = computed(() => new Date(revision).toLocaleDateString());
 const blogText = computed(() => renderBlogText(body));
-const tagsList = computed(() => tags.join(", "));
+const tagsList = computed(() => tags);
 </script>
 
 <style>
