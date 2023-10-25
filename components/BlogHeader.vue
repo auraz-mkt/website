@@ -1,33 +1,126 @@
 <template>
     <div class="blogheader">
-        <h3 class="blogheader__title">
-            Tags
-        </h3>
-        <div class="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-24 md:max-h-full md:flex-row md:items-start">
-            <ul class="flex flex-col items-center space-y-2 md:ml-auto md:flex-row md:space-y-0">
-                <li v-for="tag in tags" :key="tag" class="font-bold md:mr-12"><a :href="localePath(generateTagURL(tag), locale)">{{ tag }}</a></li>
-                <!-- <li class="md:mr-12"><a href="#">Lorem 3</a></li>
-                <li class="md:mr-12">
-                <button class="rounded-full border-2 border-cyan-500 px-6 py-1 text-cyan-600 transition-colors hover:bg-cyan-500 hover:text-white">Login</button>
-                </li> -->
-            </ul>
+        <div class="relative">
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                <summary class="dropbar__filter">
+                    Classificar por
+                    <span class="transition group-open:-rotate-180">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                            />
+                        </svg>
+                    </span>
+                </summary>
+        
+                <div class="filter__box">
+                    <ul class="space-y-1 border-t border-gray-200 p-4">
+                        <li>
+                            <label class="classifier__item">      
+                                <a> Recomendado </a>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="classifier__item">      
+                                <a> Popular </a>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="classifier__item">      
+                                <a> Recente </a>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div class="relative">
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+                <summary class="dropbar__filter">
+                    Tags
+                    <span class="transition group-open:-rotate-180">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="h-4 w-4"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                            />
+                        </svg>
+                    </span>
+                </summary>
+        
+                <div class="filter__box">
+                    <header class="flex items-center justify-between p-4">
+                        <span class="text-gray-700">{{ selectedTags.length }} Selecionadas </span>
+        
+                        <button
+                            type="button"
+                            class="text-gray-900"
+                            @click="resetTags"
+                        >
+                            Resetar
+                        </button>
+                    </header>
+        
+                    <ul class="space-y-1 border-t border-gray-200 p-4">
+                        <li v-for="tag in tags" :key="tag" class="tag__items">
+                            <label class="inline-flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    class="h-5 w-5 rounded border-gray-300"
+                                    @click="toggleTagSelection(tag)"
+                                    :value="tag"
+                                    v-model="selectedTags"
+                                /> 
+                                <span class="font-medium text-gray-700">
+                                    <a :href="localePath(generateTagURL(tag), locale)">{{ tag }}</a>
+                                </span>
+                            </label> 
+                        </li>
+                    </ul>
+                </div>
+            </details>
         </div>
     </div>
 </template>
 
 <style>
 .blogheader {
-    @apply text-gray-600 text-2xl;
-    @apply text-slate-700 relative flex max-w-screen-xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center;
+    @apply flex gap-8 justify-center border-b border-gray-300 pb-3 ml-10 mr-10;
 }
 
-.blogheader__title {
-    @apply flex cursor-pointer items-center whitespace-nowrap text-2xl font-black;
+
+.dropbar__filter {
+    @apply flex cursor-pointer items-center gap-2 pb-1 text-gray-900 transition hover:text-gray-700 text-lg font-medium;
 }
 
-.custom-label {
-    @apply absolute top-5 right-7 cursor-pointer md:hidden;
+.filter__box {
+    @apply z-50 group-open:absolute group-open:start-0 group-open:top-auto group-open:mt-2;
+    @apply w-64 rounded-lg border border-gray-200 bg-white text-base;
 }
+
+.classifier__item {
+    @apply inline-flex items-center gap-2;
+    @apply block rounded-lg px-4 py-2 hover:bg-gray-100 hover:text-gray-700;
+}
+
 </style>
 
 <script setup>
@@ -58,4 +151,19 @@ const {
 
     return tags;
 });
+
+const selectedTags = ref([]);
+
+const toggleTagSelection = (tag) => {
+    if (selectedTags.value.includes(tag)) {
+        selectedTags.value = selectedTags.value.filter((t) => t !== tag);
+    } else {
+        selectedTags.value.push(tag);
+    }
+};
+
+const resetTags = () => {
+    selectedTags.value = [];
+};
+
 </script>
