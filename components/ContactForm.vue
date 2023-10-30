@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-2 gap-4 mt-20 p-6">
-    <div class="contact-form flex items-center justify-center">
+    <div class="contact-form">
       <div class="mx-auto w-full">
         <form action="https://formbold.com/s/9EPBp" method="POST">
           <div class="mb-5">
@@ -145,6 +145,7 @@
       </div>
     </div>
     <div class="contact-form-description">
+      <p class="block">{{contactForms.fields.body}}</p>
       <div v-html="renderBlogText(contactForms.fields.description)"></div>
     </div>
   </div>
@@ -219,7 +220,7 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .contact-form {
-    min-width: 700px;
+    min-width: 40vw;
   }
 }
 
