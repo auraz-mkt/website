@@ -1,7 +1,5 @@
 <template>
   <header class="header">
-    <TheHeaderMenu />
-    <TheHeaderLocales />
   </header>
 </template>
 
