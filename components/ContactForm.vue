@@ -145,7 +145,7 @@
       </div>
     </div>
     <div class="contact-form-description">
-      <div v-html="renderBlogText(contactForms.fields.description)"></div>
+      <div v-html="renderBlogText(contactForms?.fields?.description)"></div>
     </div>
   </div>
   
@@ -159,7 +159,7 @@ const {
     data: contactForms,
     error,
     status,
-} = await useAsyncData("contactForms", async () => {
+} = useAsyncData("contactForms", async () => {
     const contentfulClient = contentful.createClient({
         space: config.contentful.spaceId,
         accessToken: config.contentful.accessToken,
