@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <!--- <form action="ok" class="max-w-[450px] w-full px-2">
+    <!-- <form action="ok" class="max-w-[450px] w-full px-2">
         <div class="relative">
             <input type="text" name="q" class="w-full border h-10 shadow p-4 rounded-full justify-center" placeholder="search">
             <button type="submit">
