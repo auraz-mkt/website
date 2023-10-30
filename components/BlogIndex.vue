@@ -1,6 +1,6 @@
 <template>
     <main class="posts">
-        <BlogHeader />
+        <TagCloud />
         <PostList :current_page="current_page" :tag="tag" />
     </main>
 </template>
