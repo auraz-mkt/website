@@ -33,6 +33,7 @@ export default defineNuxtConfig({
       spaceId: process.env.CTF_SPACE_ID,
       accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
       blogPostTypeId: process.env.CTF_BLOG_POST_TYPE_ID,
+      contactFormTypeId: process.env.CTF_CONTACT_FORM_TYPE_ID,
     },
   },
 });
