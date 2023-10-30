@@ -145,7 +145,6 @@
       </div>
     </div>
     <div class="contact-form-description">
-      <p class="block">{{contactForms.fields.body}}</p>
       <div v-html="renderBlogText(contactForms.fields.description)"></div>
     </div>
   </div>
