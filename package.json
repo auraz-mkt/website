@@ -15,5 +15,15 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "nuxt": "^3.7.0",
     "nuxt-icon": "^0.5.0"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.2.0",
+    "@contentful/rich-text-types": "^16.3.0",
+    "@pinia/nuxt": "^0.4.11",
+    "contentful": "^10.5.1",
+    "pinia": "^2.1.6"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
