@@ -24,5 +24,17 @@
   "paging": {
     "previous": "Anterior",
     "next": "Próxima"
+  },
+  "contact_form": {
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "type": "Tipo",
+    "type_creator": "Criador",
+    "type_brand": "Marca",
+    "submit_button": "Enviar",
+    "place_holder_name": "Nome completo",
+    "place_holder_email": "exemplo{'@'}dominio{'.'}com",
+    "place_holder_message": "Escreva sua mensagem"
   }
 }
