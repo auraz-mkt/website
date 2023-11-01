@@ -6,7 +6,16 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "nuxt-icon",
+    "@pinia/nuxt",
   ],
+  nitro: {
+    externals: {
+      inline: [
+        "@contentful/rich-text-types",
+        "@contentful/rich-text-html-renderer",
+      ],
+    },
+  },
   googleFonts: {
     families: { "Cinzel+Decorative": true, Quicksand: true },
   },
