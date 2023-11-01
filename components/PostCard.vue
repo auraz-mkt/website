@@ -19,7 +19,7 @@
                 <span class="absolute inset-0"></span>
                 {{ post.fields.title }}
             </h3>
-            <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" v-html="blogText" />
+            <div class="flex-grow mt-5 line-clamp-3 text-sm leading-6 text-gray-600" v-html="blogText" />
           </div>
           <div class="relative mt-8 flex items-center gap-x-4">
             <img :src="post?.fields?.author[0].fields.image.fields.file.url" alt="" class="h-10 w-10 rounded-full bg-gray-50">
@@ -44,7 +44,7 @@ const { post } = defineProps(["post"]);
 const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
 const tagsList = computed(() => post.fields.tags);
 const blogText = computed(() => renderBlogText(post.fields.body));
-const navigatePostURL = computed(() => "/" + locale.value + "/blog/posts/" + post.fields.slug);
+const navigatePostURL = computed(() => "/blog/posts/" + post.fields.slug);
 </script>
 
 <style>
