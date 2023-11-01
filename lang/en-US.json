@@ -20,5 +20,9 @@
       "experience": "Ex Elo7 (Principal ML Engineer)",
       "education": "PhD candidate in Computer Science"
     }
+  },
+  "paging": {
+    "previous": "Previous",
+    "next": "Next"
   }
 }
