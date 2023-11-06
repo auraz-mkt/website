@@ -5,9 +5,9 @@
     <a :href="navigatePostURL">
       <div class="p-2 group relative w-full">
         <div class="relative w-full h-80 overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
-                  <img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center">
+                  <a :href="navigatePostURL"><img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center"></a>
               </div>
-        <article class="flex max-w-xl flex-col items-start justify-between">
+        <article class="flex max-w-xl flex-col items-start justify-between grow">
           <div class="pt-1 flex items-center gap-x-4 text-xs">
             <time :datetime="post.sys.createdAt" class="text-gray-500">{{ publicationDate }}</time>
             <div>
@@ -19,7 +19,7 @@
                 <span class="absolute inset-0"></span>
                 {{ post.fields.title }}
             </h3>
-            <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" v-html="blogText" />
+            <div class="flex-grow mt-5 line-clamp-3 text-sm leading-6 text-gray-600" v-html="blogText" />
           </div>
           <div class="relative mt-8 flex items-center gap-x-4">
             <img :src="post?.fields?.author[0].fields.image.fields.file.url" alt="" class="h-10 w-10 rounded-full bg-gray-50">
@@ -44,8 +44,8 @@ const { locale, t: $t } = useI18n();
 const { post } = defineProps(["post"]);
 const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
 const tagsList = computed(() => post.metadata.tags);
-const blogText = computed(() => renderBlogText(post.fields.body));
-const navigatePostURL = computed(() => "/" + locale.value + "/blog/posts/" + post.fields.slug);
+const blogText = computed(() => post.fields.body.length > 500 ? renderBlogText(post.fields.body.substring(0, 500) + "...") : renderBlogText(post.fields.body));
+const navigatePostURL = computed(() => "/blog/posts/" + post.fields.slug);
 </script>
 
 <style>
