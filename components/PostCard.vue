@@ -36,13 +36,14 @@
       </div>
     </a>
   </div>
+  {{ JSON.stringify(post) }}
 </template>
 
 <script setup>
 const { locale, t: $t } = useI18n();
 const { post } = defineProps(["post"]);
 const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
-const tagsList = computed(() => post.fields.tags);
+const tagsList = computed(() => post.metadata.tags);
 const blogText = computed(() => renderBlogText(post.fields.body));
 const navigatePostURL = computed(() => "/" + locale.value + "/blog/posts/" + post.fields.slug);
 </script>
