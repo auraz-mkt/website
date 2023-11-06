@@ -5,7 +5,7 @@
     <a :href="navigatePostURL">
       <div class="p-2 group relative w-full">
         <div class="relative w-full h-80 overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
-                  <img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center">
+                  <a :href="navigatePostURL"><img :src="post.fields.image.fields.file.url" :alt="post.fields.altText" class="h-full w-full object-cover object-center"></a>
               </div>
         <article class="flex max-w-xl flex-col items-start justify-between grow">
           <div class="pt-1 flex items-center gap-x-4 text-xs">
