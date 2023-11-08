@@ -4,7 +4,9 @@
   "pages": {
     "about": "Sobre",
     "forBrands": "Marcas",
-    "forCreators": "Criadores"
+    "forCreators": "Criadores",
+    "blog": "Blog",
+    "contact": "Contato"
   },
   "profileImageAlt": "Imagem Perfil",
   "founders": {

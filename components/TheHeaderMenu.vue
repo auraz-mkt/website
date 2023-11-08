@@ -45,6 +45,8 @@ function hideMenu() {
 const pages = [
   { path: "/", description: "companyName" },
   { path: "/about/", description: "pages.about" },
+  { path: "/blog/tag", description: "pages.blog" },
+  { path: "/contact/", description: "pages.contact" },
 ];
 </script>
 
