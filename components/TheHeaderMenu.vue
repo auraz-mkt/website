@@ -21,9 +21,9 @@
         :key="path"
         class="header_menu__item"
       >
-        <NuxtLink class="header_menu__link" :to="localePath(path, locale)">{{
-          $t(description)
-        }}</NuxtLink>
+        <NuxtLink class="header_menu__link" :to="localePath(path, locale)">
+          {{ $t(description) }}
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -38,6 +38,7 @@ const visibleMenu = ref(false);
 function showMenu() {
   visibleMenu.value = true;
 }
+
 function hideMenu() {
   visibleMenu.value = false;
 }
@@ -49,7 +50,7 @@ const pages = [
 </script>
 
 <style>
-/* For smaller screens, menu with hamburguer */
+/* For smaller screens, menu with hamburger */
 @media not all and screen(md) {
   .header_menu__toggle {
     @apply block;
