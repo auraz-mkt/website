@@ -21,7 +21,19 @@
         :key="path"
         class="header_menu__item"
       >
-        <NuxtLink class="header_menu__link" :to="localePath(path, locale)">
+        <NuxtLink class="header_menu__link" :to="localePath(path, locale)" @click="hideMenu">
+          {{ $t(description) }}
+        </NuxtLink>
+      </li>
+      <li class="header_menu__separator">
+        <hr />
+      </li>
+      <li
+        v-for="{ path, description } in auth"
+        :key="path"
+        class="header_menu__item"
+      >
+        <NuxtLink class="header_menu__link" :to="localePath(path, locale)" @click="hideMenu">
           {{ $t(description) }}
         </NuxtLink>
       </li>
@@ -46,6 +58,11 @@ function hideMenu() {
 const pages = [
   { path: "/", description: "companyName" },
   { path: "/about/", description: "pages.about" },
+];
+
+const auth = [
+  { path: "/auth/signup/", description: "auth.links.signup" },
+  { path: "/auth/login/", description: "auth.links.login" },
 ];
 </script>
 
@@ -109,6 +126,13 @@ const pages = [
   @apply no-underline;
   @apply hover:text-shadow-xl hover:shadow-tertiary;
   @apply focus:outline-none focus:text-shadow-xl focus:shadow-tertiary;
+}
+
+.header_menu__separator {
+  @apply md:hidden;
+  @apply h-0.5 w-full;
+  @apply border-none;
+  @apply bg-primary;
 }
 
 .header_menu__item:first-child {

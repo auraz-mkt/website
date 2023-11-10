@@ -3,6 +3,8 @@
   "waitList": "Entre na nossa lista de espera!",
   "pages": {
     "about": "Sobre",
+    "signup": "Cadastro",
+    "login": "Acesso",
     "forBrands": "Marcas",
     "forCreators": "Criadores"
   },
@@ -48,6 +50,27 @@
         "noResultsFoundTooRestrict": "Nenhum criador encontrado!",
         "relaxSearch": "Mude sua busca para encontrar mais criadores"
       }
+    }
+  },
+  "auth": {
+    "links": {
+      "login": "Entrar",
+      "signup": "Cadastrar"
+    },
+    "formFields": {
+      "email": "E-mail:",
+      "password": "Senha:",
+      "passwordConfirmation": "Confirmação de Senha:"
+    },
+    "login": {
+      "greeting": "Prazer te rever!",
+      "anonymousHasNoAccount": "Não tem uma conta ainda?",
+      "signupInstead": "Cadastre-se"
+    },
+    "signup": {
+      "cta": "Junte-se a nós!",
+      "anonymousHasAccount": "Já tem uma conta?",
+      "loginInstead": "Acesse"
     }
   }
 }

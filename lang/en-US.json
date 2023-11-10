@@ -3,6 +3,8 @@
   "waitList": "Join our waitlist!",
   "pages": {
     "about": "About",
+    "signup": "Signup",
+    "login": "Login",
     "forBrands": "Brands",
     "forCreators": "Creators"
   },
@@ -48,6 +50,27 @@
         "noResultsFoundTooRestrict": "No creators found!",
         "relaxSearch": "Change your search to find more creators"
       }
+    }
+  },
+  "auth": {
+    "links": {
+      "login": "Login",
+      "signup": "Signup"
+    },
+    "formFields": {
+      "email": "Email:",
+      "password": "Password:",
+      "passwordConfirmation": "Password Confirmation:"
+    },
+    "login": {
+      "greeting": "Welcome back!",
+      "anonymousHasNoAccount": "Don't have an account yet?",
+      "signupInstead": "Signup"
+    },
+    "signup": {
+      "cta": "Join us!",
+      "anonymousHasAccount": "Already have an account?",
+      "loginInstead": "Login"
     }
   }
 }
