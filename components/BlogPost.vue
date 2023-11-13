@@ -2,7 +2,7 @@
   <article class="max-w-5xl mx-auto">
     <header class="mb-14">
       <div class="mt-3 text-center">
-        <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
+        <!-- <TagButton v-for="tag in tagsList" :key="tag" :tag=tag /> -->
       </div>
 
       <h1 class="text-4xl text-center font-bold leading-normal text-slate-900 mt-0 mb-3">

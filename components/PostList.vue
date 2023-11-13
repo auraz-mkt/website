@@ -40,7 +40,7 @@ const {
         locale: locale.value,
         limit: limit,
         skip: (current_page - 1) * limit,
-        [`fields.tags`]: bootstrapTag(tag),
+        [`metadata.tags`]: bootstrapTag(tag),
     });
 
     return items;
@@ -58,7 +58,7 @@ const {
         content_type: config.contentful.blogPostTypeId,
         order: "-sys.createdAt",
         locale: locale.value,
-        [`fields.tags`]: bootstrapTag(tag),
+        // [`metadata.tags.sys[0].id`]: bootstrapTag(tag),
     });
 
     return items;
