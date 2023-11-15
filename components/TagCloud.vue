@@ -4,7 +4,6 @@
             <span>Explore nossos posts por tags</span>  
         </div>
         {{ JSON.stringify(tags) }}
-        <!-- {{ JSON.stringify(newTags) }} -->
 
         <div v-for="(tag, index) in tags.slice(0, showMoreTags ? tags.length : 5)" :key="index" class="tag__items md:hidden">
             <span class="tag__item">
@@ -82,7 +81,6 @@
             order: "-sys.createdAt",
             locale: locale.value,
         });
-        const tags = items.map((post) => post.metadata.tags.join(",")).join(",").split(",").filter((value, index, array) => array.indexOf(value) === index);
         const tagsIds = items.map((post) => post.metadata.tags).map((a) => a);
         const todosOsIdsSet = new Set(tagsIds
                 .flat()
