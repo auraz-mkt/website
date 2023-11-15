@@ -1,7 +1,7 @@
 <template>
   <main class="blog">
     <BlogPost :publication="sys.createdAt" :revision="sys.updatedAt" :title="fields.title[locale]"
-      :body="fields.body[locale]" :tags="fields.tags[locale]" :author="fields.author['pt-BR']" :imgUrl="fields.image[locale].fields.file[locale].url" :imgAlt="fields.altText"/>
+      :body="fields.body[locale]" :tags=tags :author="fields.author['pt-BR']" :imgUrl="fields.image[locale].fields.file[locale].url" :imgAlt="fields.altText"/>
       <ShareButton />
   </main>
 </template>
@@ -45,6 +45,7 @@ if (error.value) {
 
 const sys = computed(() => data.value.sys);
 const fields = computed(() => data.value.fields);
+const tags = computed(() => data.value.metadata.tags);
 
 route.meta.nuxtI18n = {
   "pt-BR": { slug: fields.value.slug["pt-BR"] },
