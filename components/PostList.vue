@@ -40,10 +40,12 @@ const {
         locale: locale.value,
         limit: limit,
         skip: (current_page - 1) * limit,
-        [`metadata.tags`]: bootstrapTag(tag),
     });
 
-    return items;
+    const bootstrappedTag = bootstrapTag(tag);
+    return bootstrappedTag.length > 0
+        ? items.filter(post => post.metadata.tags.some(tagObj => bootstrappedTag.includes(tagObj.sys.id)))
+        : items;
 });
 
 const {
@@ -58,10 +60,12 @@ const {
         content_type: config.contentful.blogPostTypeId,
         order: "-sys.createdAt",
         locale: locale.value,
-        // [`metadata.tags.sys[0].id`]: bootstrapTag(tag),
     });
 
-    return items;
+    const bootstrappedTag = bootstrapTag(tag);
+    return bootstrappedTag.length > 0
+        ? items.filter(post => post.metadata.tags.some(tagObj => bootstrappedTag.includes(tagObj.sys.id)))
+        : items;
 });
 
 const pages_num = parseInt(Math.ceil((postsFull?._rawValue?.length || 0) / limit));
