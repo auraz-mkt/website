@@ -3,7 +3,6 @@
         <div class="tag__cloud__title">
             <span>Explore nossos posts por tags</span>  
         </div>
-        {{ JSON.stringify(tags) }}
 
         <div v-for="(tag, index) in tags.slice(0, showMoreTags ? tags.length : 5)" :key="index" class="tag__items md:hidden">
             <span class="tag__item">
