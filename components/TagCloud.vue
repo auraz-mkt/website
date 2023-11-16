@@ -3,13 +3,12 @@
         <div class="tag__cloud__title">
             <span>Explore nossos posts por tags</span>  
         </div>
-
-        <div v-for="(tag, index) in tags.slice(0, showMoreTags ? tags.length : 5)" :key="index" class="tag__items md:hidden">
+        <div v-for="(tag, index) in tags && tags.slice(0, showMoreTags ? tags.length : 5)" :key="index" class="tag__items md:hidden">
             <span class="tag__item">
                 <a :href="localePath(generateTagURL(tag), locale)"> #{{ tag }}</a>
             </span>
         </div>
-        <button class="tag__item md:hidden" @click="toggleShowMoreTags" v-if="tags.length > 5">{{ showMoreTags ? '< Mostrar Menos' : 'Mostrar Mais >' }}</button>
+        <button class="tag__item md:hidden" @click="toggleShowMoreTags" v-if="tags && tags.length > 5">{{ showMoreTags ? '< Mostrar Menos' : 'Mostrar Mais >' }}</button>
 
         <div v-for="(tag, index) in tags" :key="index" class="tag__items hidden md:block">
             <span class="tag__item">
