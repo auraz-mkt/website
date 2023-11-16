@@ -21,9 +21,9 @@
         :key="path"
         class="header_menu__item"
       >
-        <NuxtLink class="header_menu__link" :to="localePath(path, locale)">{{
+        <a :href=path> {{
           $t(description)
-        }}</NuxtLink>
+        }} </a>
       </li>
     </ul>
   </div>
@@ -45,7 +45,7 @@ function hideMenu() {
 const pages = [
   { path: "/", description: "companyName" },
   { path: "/about/", description: "pages.about" },
-  { path: "/blog/tag", description: "pages.blog" },
+  { path: "/blog", description: "pages.blog" },
   { path: "/contact/", description: "pages.contact" },
 ];
 </script>
