@@ -80,14 +80,13 @@
             order: "-sys.createdAt",
             locale: locale.value,
         });
-        const tagsIds = items.map((post) => post.metadata.tags).map((a) => a);
+        const tagsIds = items.map((post) => post.metadata.tags);
         const todosOsIdsSet = new Set(tagsIds
                 .flat()
                 .filter((tag) => tag && tag.sys && tag.sys.id)
                 .map((tag) => tag.sys.id)
         );
 
-        // Converter o Set de volta para um array, se necessário
         const todosOsIds = Array.from(todosOsIdsSet);
 
         return todosOsIds;
