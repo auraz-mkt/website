@@ -19,6 +19,7 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.2.0",
     "@contentful/rich-text-types": "^16.3.0",
+    "@esbuild/darwin-arm64": "^0.19.6",
     "@pinia/nuxt": "^0.4.11",
     "contentful": "^10.5.1",
     "pinia": "^2.1.6"
