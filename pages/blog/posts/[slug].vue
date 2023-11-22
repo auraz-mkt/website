@@ -52,7 +52,7 @@ route.meta.nuxtI18n = {
   "en-US": { slug: fields.value.slug["en-US"] },
 };
 
-const pageTitle = `${$t("blog.name")} | ${fields.value.title[locale.value]}`;
+const pageTitle = `${$t("pages.blog")} | ${fields.value.title[locale.value]}`;
 
 useSeoMeta({
   title: pageTitle,
