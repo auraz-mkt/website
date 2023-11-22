@@ -38,5 +38,9 @@
     "place_holder_name": "Full Name",
     "place_holder_email": "example{'@'}domain{'.'}com",
     "place_holder_message": "Type your message"
+  },
+  "blog": {
+    "publication": "Published on",
+    "revision": "Revised on"
   }
 }
