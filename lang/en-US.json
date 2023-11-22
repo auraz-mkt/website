@@ -6,7 +6,9 @@
     "blog": "Blog",
     "contact": "Contact",
     "forBrands": "Brands",
-    "forCreators": "Creators"
+    "forCreators": "Creators",
+    "blog": "Blog",
+    "contact": "Contact"
   },
   "profileImageAlt": "Profile Image",
   "founders": {

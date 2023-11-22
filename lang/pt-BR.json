@@ -6,7 +6,9 @@
     "blog": "Blog",
     "contact": "Contato",
     "forBrands": "Marcas",
-    "forCreators": "Criadores"
+    "forCreators": "Criadores",
+    "blog": "Blog",
+    "contact": "Contato"
   },
   "profileImageAlt": "Imagem Perfil",
   "founders": {
