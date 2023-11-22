@@ -43,7 +43,7 @@
 const { locale, t: $t } = useI18n();
 const { post } = defineProps(["post"]);
 const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
-const tagsList = computed(() => post.metadata.tags);
+const tagsList = computed(() => post.metadata.tags.map((tag) => tag.sys.id));
 const blogText = computed(() => post.fields.body.length > 500 ? renderBlogText(post.fields.body.substring(0, 500) + "...") : renderBlogText(post.fields.body));
 const navigatePostURL = computed(() => "/blog/posts/" + post.fields.slug);
 </script>

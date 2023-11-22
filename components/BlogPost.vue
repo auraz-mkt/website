@@ -53,7 +53,7 @@ const { publication, revision, title, body, tags, author, imgUrl, imgAlt } = def
 const publicationDate = computed(() => new Date(publication).toLocaleDateString());
 const revisionDate = computed(() => new Date(revision).toLocaleDateString());
 const blogText = computed(() => renderBlogText(body));
-const tagsList = computed(() => tags);
+const tagsList = computed(() => tags.map((tag) => tag.sys.id));
 </script>
 
 <style>
