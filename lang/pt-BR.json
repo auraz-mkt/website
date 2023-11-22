@@ -4,7 +4,9 @@
   "pages": {
     "about": "Sobre",
     "forBrands": "Marcas",
-    "forCreators": "Criadores"
+    "forCreators": "Criadores",
+    "blog": "Blog",
+    "contact": "Contato"
   },
   "profileImageAlt": "Imagem Perfil",
   "founders": {
@@ -36,5 +38,9 @@
     "place_holder_name": "Nome completo",
     "place_holder_email": "exemplo{'@'}dominio{'.'}com",
     "place_holder_message": "Escreva sua mensagem"
+  },
+  "blog": {
+    "publication": "Publicado em",
+    "revision": "Revisado em"
   }
 }
