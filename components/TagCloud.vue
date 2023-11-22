@@ -4,16 +4,12 @@
             <span>Explore nossos posts por tags</span>  
         </div>
         <div v-for="(tag, index) in tags && tags.slice(0, showMoreTags ? tags.length : 5)" :key="index" class="tag__items md:hidden">
-            <span class="tag__item">
-                <a :href="localePath(generateTagURL(tag), locale)"> #{{ tag }}</a>
-            </span>
+            <TagButton :tag="tag" />
         </div>
         <button class="tag__item md:hidden" @click="toggleShowMoreTags" v-if="tags && tags.length > 5">{{ showMoreTags ? '< Mostrar Menos' : 'Mostrar Mais >' }}</button>
 
         <div v-for="(tag, index) in tags" :key="index" class="tag__items hidden md:block">
-            <span class="tag__item">
-                <a :href="localePath(generateTagURL(tag), locale)"> #{{ tag }}</a>
-            </span>
+            <TagButton :tag="tag" />
         </div>
     </div>
 
@@ -38,10 +34,7 @@
 <script setup>
     import contentful from "contentful";
     const { locale, t: $t } = useI18n();
-    const localePath = useLocalePath();
     const config = useRuntimeConfig();
-
-    const generateTagURL = (tag) => '/blog/tags/' + btoa(tag);
 
     // const {
     //     data: tags,
