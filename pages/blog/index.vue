@@ -1,5 +1,8 @@
 <template>
     <BlogIndex />
+    <client-only placeholder="Loading...">
+        <BackToTop />
+    </client-only>
 </template>
 
 <style>
