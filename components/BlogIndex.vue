@@ -1,6 +1,9 @@
 <template>
     <main class="posts">
-        <TagCloud />
+        <div class="divide-y">
+            <TagCloud />
+            <Filters />
+        </div>
         <PostList :current_page="current_page" :tag="tag" />
     </main>
 </template>
