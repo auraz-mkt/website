@@ -36,7 +36,6 @@
       </div>
     </a>
   </div>
-  {{ JSON.stringify(post) }}
 </template>
 
 <script setup>

@@ -2,9 +2,9 @@
     <main class="posts">
         <div class="divide-y">
             <TagCloud />
-            <Filters />
+            <DateFilter />
         </div>
-        <PostList :current_page="current_page" :tag="tag"/>
+        <PostList :current_page="current_page" :tag="tag" :date="date"/>
     </main>
 </template>
 

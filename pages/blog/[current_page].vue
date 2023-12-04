@@ -1,6 +1,5 @@
 <template>
     <BlogIndex :current_page="route.params.current_page" />
-    <!-- {{ JSON.stringify(route.params) }} -->
 </template>
 
 <script setup>
