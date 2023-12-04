@@ -4,7 +4,7 @@
             <TagCloud />
             <Filters />
         </div>
-        <PostList :current_page="current_page" :tag="tag" />
+        <PostList :current_page="current_page" :tag="tag"/>
     </main>
 </template>
 
@@ -16,6 +16,10 @@ export default {
             type: Number
         },
         tag: {
+            default: '',
+            type: String
+        },
+        date: {
             default: '',
             type: String
         }
