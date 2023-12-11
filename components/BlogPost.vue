@@ -9,8 +9,8 @@
         {{ title }}</h1>
 
       <div class="relative mt-4 flex items-center gap-x-4 justify-center text-center">
-        <!-- <img :src="author[0].fields.image['pt-BR'].fields.file['pt-BR'].url" alt="" -->
-          <!-- class="h-12 w-12 rounded-full bg-gray-50">
+        <img :src="author[0].fields.image['pt-BR'].fields.file['pt-BR'].url" alt=""
+          class="h-12 w-12 rounded-full bg-gray-50">
         <div class="text-sm leading-6">
           <p class="font-semibold text-gray-900">
             <a href="#">
@@ -18,13 +18,13 @@
               {{ author[0].fields.name['pt-BR'] }}
             </a>
           <p> {{ author[0].fields.image['pt-BR'].fields.file.url }} </p>
-          </p> -->
+          </p>
           <div class="blog_post__dates">
             <p class="blog_post__publication">{{ $t("blog.publication") }}: {{ publicationDate }}</p>
             <p class="blog_post__revision">{{ $t("blog.revision") }}: {{ revisionDate }}</p>
           </div>
         </div>
-      <!-- </div> -->
+      </div>
 
       <div class="mt-10 -mx-7 md:mx-0">
         <img class="w-full max-w-2xl mx-auto" :src="imgUrl" :width="960" :height="500" :alt="imgAlt">

@@ -11,15 +11,6 @@
       <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
         <MenuItems class="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div class="py-1">
-            <!-- <MenuItem v-slot="{ active }">
-              <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Novembro 2023</a>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Outubro 2023</a>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a href="#" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">Setembro 2023</a>
-            </MenuItem> -->
             <MenuItem v-slot="{ active }" v-for="date in dates">
               <a :href="localePath(generateDateURL(date), locale)" :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">{{date}}</a>
             </MenuItem>
@@ -28,7 +19,6 @@
       </transition>
     </Menu>
     </div>
-  {{ JSON.stringify(dates) }}
 </template>
   
 <script setup>
@@ -45,7 +35,7 @@ function extractUniqueYearsMonths(datesArray) {
   const uniqueDates = new Set();
   datesArray.forEach(dateString => {
     const date = new Date(dateString);
-    const yearMonth = `${date.getFullYear()}-${date.getMonth() + 1}`; // Mês é baseado em zero
+    const yearMonth = `${date.getFullYear()}-${date.getMonth() + 1}`; 
     uniqueDates.add(yearMonth);
   });
 
@@ -67,23 +57,8 @@ const {
     locale: locale.value,
   });
   const updated = items.map((post) => post.sys.updatedAt);
-  // const todosOsIdsSet = new Set(tagsIds
-  //         .flat()
-  //         .filter((tag) => tag && tag.sys && tag.sys.id)
-  //         .map((tag) => tag.sys.id)
-  // );
-
-  // const todosOsIds = Array.from(todosOsIdsSet);
   return extractUniqueYearsMonths(updated);
-
-  // return updated;
 });
-
-const showMoreTags = ref(false);
-
-const toggleShowMoreTags = () => {
-  showMoreTags.value = !showMoreTags.value;
-};
 </script>
 
 <style></style>

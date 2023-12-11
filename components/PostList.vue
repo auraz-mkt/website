@@ -5,7 +5,6 @@
     <div class="mt-20 mb-20 paging flex flex-wrap justify-center">
         <Paging :pages="pages" :current_page="current_page" />
     </div>
-    <!-- {{ JSON.stringify(posts) }} -->
 </template>
 
 <script setup>
@@ -31,7 +30,7 @@ const bootstrapDate = (date) => {
 function filterPostsByDate(posts, year, month) {
   return posts.filter(post => {
     const updatedAt = new Date(post.sys.updatedAt);
-    return updatedAt.getFullYear() === year && updatedAt.getMonth() === month - 1; // Mês é baseado em zero no JavaScript
+    return updatedAt.getFullYear() === year && updatedAt.getMonth() === month - 1;
   });
 }
 const {

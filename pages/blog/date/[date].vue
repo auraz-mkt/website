@@ -1,6 +1,5 @@
 <template>
     <BlogIndex :date="route.params.date" />
-    <!-- {{ JSON.stringify(route.params) }} -->
 </template>
 
 <script setup>

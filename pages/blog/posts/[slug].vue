@@ -3,7 +3,6 @@
     <BlogPost :publication="sys.createdAt" :revision="sys.updatedAt" :title="fields.title[locale]"
       :body="fields.body[locale]" :tags=tags :author="fields.author['pt-BR']" :imgUrl="fields.image['pt-BR'].fields.file['pt-BR'].url" :imgAlt="fields.altText"/>
       <ShareButton />
-      <!-- {{ JSON.stringify(fields.altText) }} -->
   </main>
 </template>
 
