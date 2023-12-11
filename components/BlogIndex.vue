@@ -1,7 +1,10 @@
 <template>
     <main class="posts">
-        <TagCloud />
-        <PostList :current_page="current_page" :tag="tag" />
+        <div class="divide-y">
+            <TagCloud />
+            <DateFilter />
+        </div>
+        <PostList :current_page="current_page" :tag="tag" :date="date"/>
     </main>
 </template>
 
@@ -13,6 +16,10 @@ export default {
             type: Number
         },
         tag: {
+            default: '',
+            type: String
+        },
+        date: {
             default: '',
             type: String
         }

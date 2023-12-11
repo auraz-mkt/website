@@ -9,7 +9,7 @@
               </div>
         <article class="flex max-w-xl flex-col items-start justify-between grow">
           <div class="pt-1 flex items-center gap-x-4 text-xs">
-            <time :datetime="post.sys.createdAt" class="text-gray-500">{{ publicationDate }}</time>
+            <time :datetime="post.sys.updatedAt" class="text-gray-500">{{ publicationDate }}</time>
             <div>
               <TagButton v-for="tag in tagsList" :key="tag" :tag=tag />
             </div>
@@ -36,13 +36,12 @@
       </div>
     </a>
   </div>
-  <!-- {{ JSON.stringify(post) }} -->
 </template>
 
 <script setup>
 const { locale, t: $t } = useI18n();
 const { post } = defineProps(["post"]);
-const publicationDate = computed(() => new Date(post.sys.createdAt).toLocaleDateString());
+const publicationDate = computed(() => new Date(post.sys.updatedAt).toLocaleDateString());
 const tagsList = computed(() => post.metadata.tags.map((tag) => tag.sys.id));
 const blogText = computed(() => post.fields.body.length > 500 ? renderBlogText(post.fields.body.substring(0, 500) + "...") : renderBlogText(post.fields.body));
 const navigatePostURL = computed(() => "/blog/posts/" + post.fields.slug);
